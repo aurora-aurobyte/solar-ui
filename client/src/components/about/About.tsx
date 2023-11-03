@@ -2,52 +2,54 @@
 
 type Props = {}
 
-export default function About({}: Props) {
-  return (
-    <>
-    {/* <!-- About Section Two / Style Two --> */}
-	<section className="about-section-two mt-lg-5">
-		<figure className="floating-home2-about"><img src="images/icons/layout1-left.png" alt=""/></figure>
-		<div className="auto-container">
-			<div className="row">
-				<div className="content-column col-lg-6 col-md-12 col-sm-12 order-2 wow fadeInRight" data-wow-delay="600ms">
-					<div className="inner-column ps-lg-5">
-						<div className="sec-title mb-30">
-							<span className="sub-title">Get To Know Us</span>
-							<h2>Providing Renewable Energy Solutions</h2>
-							<div className="text">Geothermal energy is a clean and reliable source of renewable energy that uses heat from the earth’s core to generate electricity.</div>
-						</div>
-						<ul className="list-style-two">
-							<li><i className="fa fa-check-circle"></i> Solutions can help reduce the risk of oil spills</li>
-							<li><i className="fa fa-check-circle"></i> Help reduce the impact of climate change</li>
-						</ul>
-						<div className="d-sm-flex align-items-sm-center justify-content-sm-between mt-20">
-							<div className="home2-support-1">
-								<h5 className="title">24/7 Support</h5>
-								<p className="text mb-30">24/7 support refers to customer service or technical assistance</p>
-								<a href="page-about.html" className="theme-btn btn-style-one hvr-light"><span className="btn-title">Explore Now</span></a>
+export default function About({ }: Props) {
+	return (
+		<>
+			{/* <!-- About Section --> */}
+			<section className="about-section-home1">
+				<img className="about-bg-home1" src="images/background/about1-bg-home1.jpg" alt="" />
+				<div className="anim-icons">
+					<div className="float-text wow zoomInLeft">Soluris</div>
+				</div>
+				<div className="auto-container">
+					<div className="row">
+						<div className="content-column col-lg-6 order-2 wow fadeInRight">
+							<div className="inner-column pl-10">
+								<div className="sec-title mb-40">
+									<span className="sub-title">GET TO KNOW US</span>
+									<h2>Welcome to Sustainable Energy Services</h2>
+									<div className="text mb-30">Our Vision is to provide high quality and cost effective sustainable-renewable energy solutions across all markets sectors, thereby improving quality of present and future human life.</div>
+									<h4>We have 8+ years of experience in power supply and renewable energy solutions in Sri Lanka.</h4>
+								</div>
+								<div className="company-cell mb-30 d-sm-flex align-items-center position-relative">
+									<div className="icon mb-3 mb-sm-0 mr-20"><i className="fa fa-phone-volume"></i></div>
+									<div>
+										<h5 className="title my-0">Have any question? Give us a call</h5>
+										<a className="subtitle" href="tel:+92 666 888 0000">+94 212223829</a>
+									</div>
+								</div>
+								<div className="company-cell mb-30 d-sm-flex align-items-center position-relative">
+									<div className="icon mb-3 mb-sm-0 mr-20"><i className="fa fa-phone-volume"></i></div>
+									<div>
+										<h5 className="title my-0">Have any question? Give us a call</h5>
+										<a className="subtitle" href="tel:+92 666 888 0000">+94 771208700</a>
+									</div>
+								</div>
+								<a className="theme-btn btn-style-one mt-2" href="page-about.html">Explore Now</a>
 							</div>
-							<div className="icon-box1-home2 mt-4 mt-sm-0">
-								<i className="icon flaticon-quality"></i>
-								<h6 className="title">We’re Certified Solar Experts</h6>
+						</div>
+						{/* <!-- Image Column --> */}
+						<div className="image-column col-lg-6 wow fadeInLeft">
+							<div className="inner-column position-relative mr-10">
+								<figure className="image-1"><img src="images/resource/about-1.jpg" alt="" /></figure>
+								<figure className="image-2 bounce-x">
+									<img src="images/resource/about-2.jpg" alt="" />
+								</figure>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				{/* <!-- Image Column --> */}
-				<div className="col-lg-6 col-md-12 col-sm-12">
-					<div className="home2-about1-img-col">
-						<figure className="image-1"><img src="images/resource/about-1.jpg" alt="" /></figure>
-						<figure className="image-2 bounce-y d-none d-sm-block"><img src="images/resource/about-3.jpg" alt="" /></figure>
-						<figure className="image-3"><img src="images/resource/favicon_big.png" alt="" /></figure>
-						<figure className="image-4 bounce-y"><img src="images/icons/dot.png" alt="" /></figure>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	{/* <!--Emd About Section Two --> */}
-    </>
-  )
+			</section>
+		</>
+	)
 }

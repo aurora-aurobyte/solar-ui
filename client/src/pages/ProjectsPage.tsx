@@ -5,7 +5,7 @@ type Props = {}
 export default function ProjectsPage({}: Props) {
   return (
     <>
-    {/* <!-- Start main-content --> */}
+   	{/* <!-- Start main-content --> */}
 	<section className="page-title" style={{backgroundImage: "url(images/background/page-title-bg.png)"}}>
 		<div className="auto-container">
 			<div className="title-outer text-center">

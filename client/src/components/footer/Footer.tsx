@@ -1,6 +1,13 @@
-type Props = {}
+interface Props  {
+	address:string,
+	email:string,
+	number:string,
+	pNumber:string,
+	service:Array<{name:string,url:string}>,
 
-export default function Footer({}: Props) {
+}
+
+export default function Footer(props: Props) {
   return (
     <>
     {/* <!-- Main Footer --> */}
@@ -16,7 +23,7 @@ export default function Footer({}: Props) {
 						<div className="inner-box">
 							<div className="icon-box"><i className="icon flaticon-location"></i></div>
 							<h4 className="title">Address</h4>
-							<div className="text">30 St Kilda Road, Jackson Store, Australia</div>
+							<div className="text">{props.address}</div>
 						</div>
 					</div>
 					{/* <!-- Contact Info Block --> */}
@@ -25,8 +32,9 @@ export default function Footer({}: Props) {
 							<div className="icon-box"><i className="icon flaticon-e-mail-envelope"></i></div>
 							<h4 className="title">Contact</h4>
 							<div className="text">
-								<a href="mailto:needhelp@company.com">needhelp@company.com</a>
-								<a href="tel:+92(8800)48720">+92 (8800) 48720</a>
+								<a href="mailto:needhelp@company.com">{props.email}</a>
+								<a href="tel:+92(8800)48720">{props.number}</a>
+								<a href="tel:+92(8800)48720">{props.pNumber}</a>
 							</div>
 						</div>
 					</div>
@@ -61,11 +69,7 @@ export default function Footer({}: Props) {
 						<div className="footer-widget">
 							<h3 className="widget-title">Service</h3>
 							<ul className="user-links">
-								<li><a href="#">Reliability & Punctuality</a></li>
-								<li><a href="#">Trusted Franchise</a></li>
-								<li><a href="#">Warehoues Storage</a></li>
-								<li><a href="#">Real Time Tracking</a></li>
-								<li><a href="#">Transparent Pricing</a></li>
+								{props.service.map((item)=><li><a href={`#${item.url}`}>{item.name}</a></li>)}
 							</ul>
 						</div>
 					</div>

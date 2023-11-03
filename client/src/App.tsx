@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import Header from './components/header/Header'
 import About from './components/about/About'
 import Service from './components/service/Service'
@@ -39,6 +38,8 @@ import TestimonialPage from './pages/TestimonialPage'
 import NewsPage from './pages/NewsPage'
 import NewsGrid from './pages/NewsGrid'
 import Page404 from './pages/Page404'
+import HomePage from './pages/HomePage'
+import TableComponent from './components/tableComponent/TableComponent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -46,28 +47,14 @@ function App() {
   return (
     <>
     <div className="page-wrapper">
-
 {/* <!-- Preloader --> */}
-{/* <div className="preloader"></div> */}
-  <Header/>
-    <Banner/>
-    <Service/>
-    <WhyChoose/>
-    <Price/>
-    <Team/>
-    <Benifits/>
-    <Project/>
-    <Faq/>
-    <CallAction/>
-    <Testimonial/>
-    <WhyChoose2/>
-    <NewSection/>
-    <ClientSection/>
-
+{/* <div className="preloader"></div> */} 
     {/* ----pages---- */}
+   {/* <HomePage/>  */}
     {/* <AboutPage/> */}
-    {/* <ContactPage/> */}
+   {/* <ContactPage/>  */}
     {/* <PricePage/> */}
+    {/* <TableComponent/> */}
 
 {/* <ShopCartPage/> */}
 {/* <ShopCHeckOutPage/> */}
@@ -84,10 +71,7 @@ function App() {
 {/* <NewsPage/> */}
 {/* <NewsGrid/> */}
 {/* <Page404/> */}
-<Footer/>
     </div>
-    {/* <!-- Scroll To Top --> */}
-<div className="scroll-to-top scroll-to-target" data-target="html"><span className="fa fa-angle-up"></span></div>
     </>
   )
 }

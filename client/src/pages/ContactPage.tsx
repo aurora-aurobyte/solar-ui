@@ -69,9 +69,8 @@ export default function ContactPage({}: Props) {
 				<div className="col-xl-5 col-lg-6">
 					<div className="contact-details__right">
 						<div className="sec-title">
-							<span className="sub-title">Need any help?</span>
-							<h2>Get in touch with us</h2>
-							<div className="text">Lorem ipsum is simply free text available dolor sit amet consectetur notted adipisicing elit sed do eiusmod tempor incididunt simply dolore magna.</div>
+							<span className="sub-title">Need A Help ?</span>
+							<h2>We are happy to assist you...</h2>
 						</div>
 						<ul className="list-unstyled contact-details__info">
 							<li className="d-block d-sm-flex align-items-sm-center ">
@@ -80,7 +79,8 @@ export default function ContactPage({}: Props) {
 								</div>
 								<div className="text ml-xs--0 mt-xs-10">
 									<h6>Have any question?</h6>
-									<a href="tel:980089850"><span>Free</span> +92 (020)-9850</a>
+									<a href="tel:+94 212223829" style={{marginRight:10}}><span>Free</span> +94 212223829</a>
+									<a href="tel:+94 771208700"> +94 771208700</a>
 								</div>
 							</li>
 							<li className="d-block d-sm-flex align-items-sm-center ">
@@ -89,7 +89,7 @@ export default function ContactPage({}: Props) {
 								</div>
 								<div className="text ml-xs--0 mt-xs-10">
 									<h6>Write email</h6>
-									<a href="mailto:needhelp@company.com">needhelp@company.com</a>
+									<a href="mailto:accessenergyeng@gmail.com">accessenergyeng@gmail.com</a>
 								</div>
 							</li>
 							<li className="d-block d-sm-flex align-items-sm-center ">
@@ -97,8 +97,8 @@ export default function ContactPage({}: Props) {
 									<span className="lnr-icon-location"></span>
 								</div>
 								<div className="text ml-xs--0 mt-xs-10">
-									<h6>Visit anytime</h6>
-									<span>66 broklyn golden street. New York</span>
+									<h6>Visit</h6>
+									<span>No.100, Main Street Jaffna, Srilanka.</span>
 								</div>
 							</li>
 						</ul>
@@ -111,7 +111,7 @@ export default function ContactPage({}: Props) {
 
 	{/* <!-- Map Section--> */}
 	<section className="map-section">
-		<iframe  className="map w-100"  src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+		<iframe  className="map w-100"  src="https://maps.app.goo.gl/CbATtKMiWk12ADJAA"></iframe>
 	</section>
 	{/* <!--End Map Section--> */}
 
