@@ -54,77 +54,55 @@ export default function Header({ }: Props) {
 					<div className="nav-outer">
 						<nav className="nav main-menu">
 							<ul className="navigation">
-								<li className="current dropdown">
-									<a href="index.html">Home</a>
-									<ul>
-										<li><a href="index.html">Home page 01</a></li>
-										<li><a href="index-2.html">Home page 02</a></li>
-										<li><a href="index-3.html">Home page 03</a></li>
-										<li><a href="index-4.html">Home page 04</a></li>
-										<li className="dropdown"><a href="#">Single Styles</a>
-											<ul>
-												<li><a href="index-1-single.html">Single Style One</a></li>
-												<li><a href="index-2-single.html">Single Style Two</a></li>
-											</ul>
-										</li>
-										<li className="dropdown"><a href="#">Dark Styles</a>
-											<ul>
-												<li><a href="index-1-dark.html">Dark Style One</a></li>
-												<li><a href="index-2-dark.html">Dark Style Two</a></li>
-											</ul>
-										</li>
-										<li><a href="index-1-rtl.html">RTL Style One</a></li>
-									</ul>
-								</li>
+								<li><a href="/">Home</a></li>
 								<li className="dropdown">
 									<a href="#">Pages</a>
 									<ul>
-										<li><a href="page-about.html">About</a></li>
+										<li><a href="about">About</a></li>
 										<li className="dropdown">
 											<a href="#">Projects</a>
 											<ul>
-												<li><a href="page-projects.html">Projects List</a></li>
-												<li><a href="page-project-details.html">Project Details</a></li>
+												<li><a href="project-list">Projects List</a></li>
+												<li><a href="project">Project Details</a></li>
 											</ul>
 										</li>
 										<li className="dropdown">
 											<a href="#">Team</a>
 											<ul>
-												<li><a href="page-team.html">Team List</a></li>
-												<li><a href="page-team-details.html">Team Details</a></li>
+												<li><a href="team-list">Team List</a></li>
+												<li><a href="team">Team Details</a></li>
 											</ul>
 										</li>
-										<li><a href="page-testimonial.html">Testimonial</a></li>
-										<li><a href="page-pricing.html">Pricing</a></li>
-										<li><a href="page-faq.html">FAQ</a></li>
-										<li><a href="page-404.html">Page 404</a></li>
+										<li><a href="testimonial">Testimonial</a></li>
+										<li><a href="price">Pricing</a></li>
+										<li><a href="faq">FAQ</a></li>
 									</ul>
 								</li>
 								<li className="dropdown">
 									<a href="#">Services</a>
 									<ul>
-										<li><a href="page-services.html">Services List</a></li>
-										<li><a href="page-service-details.html">Service Details</a></li>
+										<li><a href="service-list">Services List</a></li>
+										<li><a href="service">Service Details</a></li>
 									</ul>
 								</li>
 								<li className="dropdown">
 									<a href="#">Shop</a>
 									<ul>
-										<li><a href="shop-products.html">Products</a></li>
-										<li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-										<li><a href="shop-product-details.html">Product Details</a></li>
-										<li><a href="shop-cart.html">Cart</a></li>
-										<li><a href="shop-checkout.html">Checkout</a></li>
+										<li><a href="product-list">Products</a></li>
+										<li><a href="product-sidebar">Products with Sidebar</a></li>
+										<li><a href="product">Product Details</a></li>
+										<li><a href="cart">Cart</a></li>
+										<li><a href="check-out">Checkout</a></li>
 									</ul>
 								</li>
 								<li className="dropdown">
 									<a href="#">News</a>
 									<ul>
-										<li><a href="news-grid.html">News Grid</a></li>
-										<li><a href="news-details.html">News Details</a></li>
+										<li><a href="news-list">News Grid</a></li>
+										<li><a href="news">News Details</a></li>
 									</ul>
 								</li>
-								<li><a href="page-contact.html">Contact</a></li>
+								<li><a href="contact-us">Contact</a></li>
 							</ul>
 						</nav>
 						{/* <!-- Main Menu End--> */}
@@ -134,7 +112,7 @@ export default function Header({ }: Props) {
 								<span className="icon lnr lnr-icon-search"></span>
 							</button>
 
-							<a href="shop-cart.html" className="ui-btn"><i className="lnr-icon-shopping-cart"></i></a>
+							<a href="cart" className="ui-btn"><i className="lnr-icon-shopping-cart"></i></a>
 
 							<a href="page-contact.html" className="theme-btn btn-style-one alternate"><span
 									className="btn-title">Get A Quote</span></a>
@@ -214,7 +192,7 @@ export default function Header({ }: Props) {
 				<button className="close-search"><span className="fa fa-times"></span></button>
 
 				<div className="search-inner">
-					<form method="post" action="index.html">
+					<form method="post" action="/">
 						<div className="form-group">
 							<input type="search" name="search-field" value="" placeholder="Search..." required />
 							<button type="submit"><i className="fa fa-search"></i></button>

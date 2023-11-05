@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react"
 import { Outlet, Navigate, useRoutes } from "react-router-dom"
 
 import Layout from "layouts"
+import FaqPage from "pages/FaqPage"
 
 export const HomePage = lazy(() => import("pages/HomePage"))
 export const AboutPage = lazy(() => import("pages/AboutPage"))
@@ -47,6 +48,23 @@ export default function Router() {
                 { path: "about", element: <AboutPage /> },
                 { path: "contact-us", element: <ContactPage /> },
                 { path: "price", element: <PricePage /> },
+                { path: "cart", element: <ShopCart/> },
+                { path: "cart-page", element: <ShopCartPage/> },
+                { path: "news-list", element: <NewsGrid/> },
+                { path: "news", element: <NewsPage/> },
+                { path: "product-sidebar", element: <ProductSideBar/> },
+                { path: "product-list", element: <ShopProductsPage/> },
+                { path: "product", element: <ShopProductDetailsPage/> },
+                { path: "check-out", element: <ShopCHeckOutPage/> },
+                { path: "service-list", element: <ServicesPage/> },
+                { path: "service", element: <ServiceDetailsPage/> },
+                { path: "project", element: <ProjectDetailsPage/> },
+                { path: "project-list", element: <ProjectsPage/> },
+                { path: "team-list", element: <TeamsPage/> },
+                { path: "team", element: <TeamDetailsPage/> },
+                { path: "testimonial", element: <TestimonialPage/> },
+                { path: "faq", element: <FaqPage/> },
+
             ],
         },
         {
