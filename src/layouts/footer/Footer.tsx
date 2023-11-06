@@ -22,10 +22,7 @@ export default function Footer(props: Props) {
         <>
             {/* <!-- Main Footer --> */}
             <footer className="main-footer">
-                <div
-                    className="bg-image"
-                    style={{ backgroundImage: "url(./images/background/5.jpg)" }}
-                ></div>
+                <div className="bg-image" style={{ backgroundImage: "url(./images/background/5.jpg)" }}></div>
 
                 {/* <!-- Contact info --> */}
                 <div className="contacts-outer">
@@ -68,9 +65,7 @@ export default function Footer(props: Props) {
                                         <i className="icon flaticon-time"></i>
                                     </div>
                                     <h4 className="title">Timing</h4>
-                                    <div className="text">
-                                        Mon - Sat: 8 am - 5 pm, Sunday: CLOSED
-                                    </div>
+                                    <div className="text">Mon - Sat: 8 am - 5 pm, Sunday: CLOSED</div>
                                 </div>
                             </div>
                         </div>
@@ -87,17 +82,14 @@ export default function Footer(props: Props) {
                                 <div className="footer-widget about-widget">
                                     <div className="logo">
                                         <a href="index.html">
-                                            <img src="images/logo-2.png" alt="" />
+                                            <img src="/images/logo.png" alt="Access Energy Engineering" />
                                         </a>
                                     </div>
                                     <div className="text">
-                                        We work with a passion of taking challenges and creating new
-                                        ones in advertising sector.
+                                        We work with a passion of taking challenges and creating new ones in advertising
+                                        sector.
                                     </div>
-                                    <a
-                                        href="page-about.html"
-                                        className="theme-btn btn-style-one hvr-light small"
-                                    >
+                                    <a href="page-about.html" className="theme-btn btn-style-one hvr-light small">
                                         <span className="btn-title">About</span>
                                     </a>
                                 </div>
@@ -125,55 +117,37 @@ export default function Footer(props: Props) {
                                         <div className="outer clearfix">
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img
-                                                        src="images/resource/project-thumb-1.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src="images/resource/project-thumb-1.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img
-                                                        src="images/resource/project-thumb-2.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src="images/resource/project-thumb-2.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img
-                                                        src="images/resource/project-thumb-3.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src="images/resource/project-thumb-3.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img
-                                                        src="images/resource/project-thumb-4.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src="images/resource/project-thumb-4.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img
-                                                        src="images/resource/project-thumb-5.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src="images/resource/project-thumb-5.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img
-                                                        src="images/resource/project-thumb-6.jpg"
-                                                        alt=""
-                                                    />
+                                                    <img src="images/resource/project-thumb-6.jpg" alt="" />
                                                 </a>
                                             </figure>
                                         </div>
@@ -188,8 +162,7 @@ export default function Footer(props: Props) {
                                     <div className="widget-content">
                                         <div className="subscribe-form">
                                             <div className="text">
-                                                Subscribe our newsletter to get our latest update &
-                                                news
+                                                Subscribe our newsletter to get our latest update & news
                                             </div>
                                             <form method="post" action="#">
                                                 <div className="form-group">
@@ -201,10 +174,7 @@ export default function Footer(props: Props) {
                                                         placeholder="Email Address"
                                                         required
                                                     />
-                                                    <button
-                                                        type="button"
-                                                        className="theme-btn btn-style-one"
-                                                    >
+                                                    <button type="button" className="theme-btn btn-style-one">
                                                         <span className="btn-title">
                                                             <i className="fa fa-paper-plane"></i>
                                                         </span>

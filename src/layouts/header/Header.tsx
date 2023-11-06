@@ -15,13 +15,13 @@ export default function Header({}: Props) {
                     {/* <!-- Info List --> */}
                     <ul className="list-style-one">
                         <li>
-                            <i className="fa fa-map-marker-alt"></i> 380 St Kilda Road, Australia
+                            <i className="fa fa-map-marker-alt"></i> No.100, Main Street Jaffna, Srilanka.
                         </li>
                         <li>
                             <i className="fa fa-clock"></i> Mon - Sat: 8am - 5pm
                         </li>
                         <li>
-                            <i className="fa fa-phone-volume"></i> <a href="tel:+92(8800)87890">+92 (8800) 87890</a>
+                            <i className="fa fa-phone-volume"></i> <a href="tel:+92(8800)87890">+94 77 120 8700</a>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +59,11 @@ export default function Header({}: Props) {
                     <div className="logo-box">
                         <div className="logo">
                             <a href="index.html">
-                                <img src="images/logo-2.png" alt="" title="Tronis" />
+                                <img
+                                    src="/images/logo.png"
+                                    alt="Access Energy Engineering"
+                                    title="Access Energy Engineering"
+                                />
                             </a>
                         </div>
                     </div>
@@ -324,7 +328,11 @@ export default function Header({}: Props) {
                         {/* <!--Logo--> */}
                         <div className="logo">
                             <a href="index.html" title="">
-                                <img src="images/logo.png" alt="" title="" />
+                                <img
+                                    src="images/logo.png"
+                                    alt="Access Energy Engineering"
+                                    title="Access Energy Engineering"
+                                />
                             </a>
                         </div>
 
