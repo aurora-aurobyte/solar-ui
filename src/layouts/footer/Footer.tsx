@@ -4,7 +4,7 @@ const contact = {
     address: "Jaffna office - No.100, Main Street Jaffna, Srilanka.",
     email: "accessenergyeng@gmail.com",
     number: "+94 212223829",
-    pNumber: "+94 771208700",
+    pNumber: "+94 77 120 8700",
     service: [
         { name: "SOLAR ELECTRICITY SYSTEMS ON-GRID", url: "" },
         { name: "SOLAR OFF-GRID", url: "" },

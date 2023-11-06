@@ -1,8 +1,4 @@
-import HeadLower from "./HeadLower"
-import HeadTop from "./HeadTop"
-import HeaderSearch from "./HeaderSearch"
-import MobileMenu from "./MobileMenu"
-import StickyHeader from "./StickyHeader"
+import { RouterLink, RouterNavLink } from "routes/components"
 
 type Props = {}
 
@@ -58,13 +54,13 @@ export default function Header({}: Props) {
                 <div className="main-box">
                     <div className="logo-box">
                         <div className="logo">
-                            <a href="index.html">
+                            <RouterLink href="/">
                                 <img
                                     src="/images/logo.png"
                                     alt="Access Energy Engineering"
                                     title="Access Energy Engineering"
                                 />
-                            </a>
+                            </RouterLink>
                         </div>
                     </div>
 
@@ -73,133 +69,153 @@ export default function Header({}: Props) {
                         <nav className="nav main-menu">
                             <ul className="navigation">
                                 <li className="current dropdown">
-                                    <a href="index.html">Home</a>
+                                    <RouterNavLink href="index.html">Home</RouterNavLink>
                                     <ul>
                                         <li>
-                                            <a href="index.html">Home page 01</a>
+                                            <RouterNavLink href="index.html">Home page 01</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="index-2.html">Home page 02</a>
+                                            <RouterNavLink href="index-2.html">Home page 02</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="index-3.html">Home page 03</a>
+                                            <RouterNavLink href="index-3.html">Home page 03</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="index-4.html">Home page 04</a>
+                                            <RouterNavLink href="index-4.html">Home page 04</RouterNavLink>
                                         </li>
                                         <li className="dropdown">
-                                            <a href="#">Single Styles</a>
+                                            <RouterNavLink href="#">Single Styles</RouterNavLink>
                                             <ul>
                                                 <li>
-                                                    <a href="index-1-single.html">Single Style One</a>
+                                                    <RouterNavLink href="index-1-single.html">
+                                                        Single Style One
+                                                    </RouterNavLink>
                                                 </li>
                                                 <li>
-                                                    <a href="index-2-single.html">Single Style Two</a>
+                                                    <RouterNavLink href="index-2-single.html">
+                                                        Single Style Two
+                                                    </RouterNavLink>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li className="dropdown">
-                                            <a href="#">Dark Styles</a>
+                                            <RouterNavLink href="#">Dark Styles</RouterNavLink>
                                             <ul>
                                                 <li>
-                                                    <a href="index-1-dark.html">Dark Style One</a>
+                                                    <RouterNavLink href="index-1-dark.html">
+                                                        Dark Style One
+                                                    </RouterNavLink>
                                                 </li>
                                                 <li>
-                                                    <a href="index-2-dark.html">Dark Style Two</a>
+                                                    <RouterNavLink href="index-2-dark.html">
+                                                        Dark Style Two
+                                                    </RouterNavLink>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="index-1-rtl.html">RTL Style One</a>
+                                            <RouterNavLink href="index-1-rtl.html">RTL Style One</RouterNavLink>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="dropdown">
-                                    <a href="#">Pages</a>
+                                    <RouterNavLink href="#">Pages</RouterNavLink>
                                     <ul>
                                         <li>
-                                            <a href="page-about.html">About</a>
+                                            <RouterNavLink href="page-about.html">About</RouterNavLink>
                                         </li>
                                         <li className="dropdown">
-                                            <a href="#">Projects</a>
+                                            <RouterNavLink href="#">Projects</RouterNavLink>
                                             <ul>
                                                 <li>
-                                                    <a href="page-projects.html">Projects List</a>
+                                                    <RouterNavLink href="page-projects.html">
+                                                        Projects List
+                                                    </RouterNavLink>
                                                 </li>
                                                 <li>
-                                                    <a href="page-project-details.html">Project Details</a>
+                                                    <RouterNavLink href="page-project-details.html">
+                                                        Project Details
+                                                    </RouterNavLink>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li className="dropdown">
-                                            <a href="#">Team</a>
+                                            <RouterNavLink href="#">Team</RouterNavLink>
                                             <ul>
                                                 <li>
-                                                    <a href="page-team.html">Team List</a>
+                                                    <RouterNavLink href="page-team.html">Team List</RouterNavLink>
                                                 </li>
                                                 <li>
-                                                    <a href="page-team-details.html">Team Details</a>
+                                                    <RouterNavLink href="page-team-details.html">
+                                                        Team Details
+                                                    </RouterNavLink>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="page-testimonial.html">Testimonial</a>
+                                            <RouterNavLink href="page-testimonial.html">Testimonial</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="page-pricing.html">Pricing</a>
+                                            <RouterNavLink href="page-pricing.html">Pricing</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="page-faq.html">FAQ</a>
+                                            <RouterNavLink href="page-faq.html">FAQ</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="page-404.html">Page 404</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="dropdown">
-                                    <a href="#">Services</a>
-                                    <ul>
-                                        <li>
-                                            <a href="page-services.html">Services List</a>
-                                        </li>
-                                        <li>
-                                            <a href="page-service-details.html">Service Details</a>
+                                            <RouterNavLink href="page-404.html">Page 404</RouterNavLink>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="dropdown">
-                                    <a href="#">Shop</a>
+                                    <RouterNavLink href="#">Services</RouterNavLink>
                                     <ul>
                                         <li>
-                                            <a href="shop-products.html">Products</a>
+                                            <RouterNavLink href="page-services.html">Services List</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="shop-products-sidebar.html">Products with Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-product-details.html">Product Details</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-cart.html">Cart</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-checkout.html">Checkout</a>
+                                            <RouterNavLink href="page-service-details.html">
+                                                Service Details
+                                            </RouterNavLink>
                                         </li>
                                     </ul>
                                 </li>
                                 <li className="dropdown">
-                                    <a href="#">News</a>
+                                    <RouterNavLink href="#">Shop</RouterNavLink>
                                     <ul>
                                         <li>
-                                            <a href="news-grid.html">News Grid</a>
+                                            <RouterNavLink href="shop-products.html">Products</RouterNavLink>
                                         </li>
                                         <li>
-                                            <a href="news-details.html">News Details</a>
+                                            <RouterNavLink href="shop-products-sidebar.html">
+                                                Products with Sidebar
+                                            </RouterNavLink>
+                                        </li>
+                                        <li>
+                                            <RouterNavLink href="shop-product-details.html">
+                                                Product Details
+                                            </RouterNavLink>
+                                        </li>
+                                        <li>
+                                            <RouterNavLink href="shop-cart.html">Cart</RouterNavLink>
+                                        </li>
+                                        <li>
+                                            <RouterNavLink href="shop-checkout.html">Checkout</RouterNavLink>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="dropdown">
+                                    <RouterNavLink href="#">News</RouterNavLink>
+                                    <ul>
+                                        <li>
+                                            <RouterNavLink href="news-grid.html">News Grid</RouterNavLink>
+                                        </li>
+                                        <li>
+                                            <RouterNavLink href="news-details.html">News Details</RouterNavLink>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="page-contact.html">Contact</a>
+                                    <RouterNavLink href="page-contact.html">Contact</RouterNavLink>
                                 </li>
                             </ul>
                         </nav>
@@ -210,13 +226,13 @@ export default function Header({}: Props) {
                                 <span className="icon lnr lnr-icon-search"></span>
                             </button>
 
-                            <a href="shop-cart.html" className="ui-btn">
+                            <RouterNavLink href="shop-cart.html" className="ui-btn">
                                 <i className="lnr-icon-shopping-cart"></i>
-                            </a>
+                            </RouterNavLink>
 
-                            <a href="page-contact.html" className="theme-btn btn-style-one alternate">
+                            <RouterNavLink href="page-contact.html" className="theme-btn btn-style-one alternate">
                                 <span className="btn-title">Get A Quote</span>
-                            </a>
+                            </RouterNavLink>
 
                             {/* <!-- Mobile Nav toggler --> */}
                             <div className="mobile-nav-toggler">
@@ -236,9 +252,13 @@ export default function Header({}: Props) {
                 <nav className="menu-box">
                     <div className="upper-box">
                         <div className="nav-logo">
-                            <a href="index.html">
-                                <img src="images/logo-2.png" alt="" title="Fesho" />
-                            </a>
+                            <RouterNavLink href="/">
+                                <img
+                                    src="images/logo.png"
+                                    alt="Access Energy Engineering"
+                                    title="Access Energy Engineering"
+                                />
+                            </RouterNavLink>
                         </div>
                         <div className="close-btn">
                             <i className="icon fa fa-times"></i>
@@ -254,7 +274,7 @@ export default function Header({}: Props) {
                             <div className="contact-info-box">
                                 <i className="icon lnr-icon-phone-handset"></i>
                                 <span className="title">Call Now</span>
-                                <a href="tel:+92880098670">+92 (8800) - 98670</a>
+                                <a href="tel:+92880098670">+94 77 120 8700</a>
                             </div>
                         </li>
                         <li>
@@ -262,7 +282,7 @@ export default function Header({}: Props) {
                             <div className="contact-info-box">
                                 <span className="icon lnr-icon-envelope1"></span>
                                 <span className="title">Send Email</span>
-                                <a href="mailto:help@company.com">help@company.com</a>
+                                <a href="mailto:help@company.com">accessenergyeng@gmail.com</a>
                             </div>
                         </li>
                         <li>
@@ -327,13 +347,13 @@ export default function Header({}: Props) {
                     <div className="inner-container">
                         {/* <!--Logo--> */}
                         <div className="logo">
-                            <a href="index.html" title="">
+                            <RouterNavLink href="/" title="">
                                 <img
                                     src="images/logo.png"
                                     alt="Access Energy Engineering"
                                     title="Access Energy Engineering"
                                 />
-                            </a>
+                            </RouterNavLink>
                         </div>
 
                         {/* <!--Right Col--> */}

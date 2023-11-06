@@ -11,6 +11,10 @@ export function useScrollToTop() {
 
         // @ts-ignore
         window.init()
+        // @ts-ignore
+        window.appear()
+        // @ts-ignore
+        window.fancyBox()
     }, [pathname])
 
     return null
