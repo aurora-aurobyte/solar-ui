@@ -8,6 +8,13 @@ export function useScrollToTop() {
 
     useEffect(() => {
         window.scrollTo(0, 0)
+
+        // @ts-ignore
+        window.init()
+        // @ts-ignore
+        window.appear()
+        // @ts-ignore
+        window.fancyBox()
     }, [pathname])
 
     return null

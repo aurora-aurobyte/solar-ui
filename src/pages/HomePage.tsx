@@ -8,11 +8,13 @@ import Team from "../components/team/Team"
 import Video from "../components/Video/Video"
 import Footer from "../layouts/footer/Footer"
 import TableComponent from "../components/tableComponent/TableComponent"
+import MainSlider from "components/mainslider/MainSlider"
 type Props = {}
 
 export default function HomePage({}: Props) {
     return (
         <>
+            <MainSlider />
             <About />
             <Video />
             <TableComponent />
