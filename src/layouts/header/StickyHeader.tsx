@@ -1,15 +1,15 @@
-
-
 type Props = {}
 
-export default function StickyHeader({ }: Props) {
+export default function StickyHeader({}: Props) {
     return (
         <div className="sticky-header">
             <div className="auto-container">
                 <div className="inner-container">
                     {/* <!--Logo--> */}
                     <div className="logo">
-                        <a href="index.html" title=""><img src="images/logo.png" alt="" title="" /></a>
+                        <a href="index.html" title="">
+                            <img src="/images/logo.png" alt="" title="" />
+                        </a>
                     </div>
 
                     {/* <!--Right Col--> */}
@@ -25,7 +25,9 @@ export default function StickyHeader({ }: Props) {
                         {/* <!-- Main Menu End--> */}
 
                         {/* <!--Mobile Navigation Toggler--> */}
-                        <div className="mobile-nav-toggler"><span className="icon lnr-icon-bars"></span></div>
+                        <div className="mobile-nav-toggler">
+                            <span className="icon lnr-icon-bars"></span>
+                        </div>
                     </div>
                 </div>
             </div>

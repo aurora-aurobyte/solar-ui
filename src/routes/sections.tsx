@@ -46,17 +46,23 @@ export default function Router() {
                 { element: <HomePage />, index: true },
                 { path: "about", element: <AboutPage /> },
                 { path: "contact-us", element: <ContactPage /> },
-                { path: "price", element: <PricePage /> },
+                {
+                    path: "products",
+                    children: [
+                        { element: <ShopProductsPage />, index: true },
+                        { path: ":productId", element: <ShopProductDetailsPage /> },
+                    ],
+                },
             ],
         },
         {
-            path: "404",
+            path: "*",
             element: <Page404 />,
         },
-        {
-            path: "*",
-            element: <Navigate to="/404" replace />,
-        },
+        // {
+        //     path: "*",
+        //     element: <Navigate to="/404" replace />,
+        // },
     ])
 
     return routes

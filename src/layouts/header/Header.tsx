@@ -1,8 +1,110 @@
+import { useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import { RouterLink, RouterNavLink } from "routes/components"
 
 type Props = {}
 
+const menus = [
+    {
+        name: "Home",
+        path: "/",
+        exact: true,
+    },
+    {
+        name: "About",
+        path: "/about",
+        exact: true,
+    },
+    {
+        name: "Products",
+        path: "/products",
+    },
+    {
+        name: "News Feeds",
+        path: "/news",
+    },
+    {
+        name: "Contact",
+        path: "/contact-us",
+        exact: true,
+    },
+]
+
 export default function Header({}: Props) {
+    useEffect(() => {
+        //Update Header Style and Scroll to Top
+        function headerStyle() {
+            // @ts-ignore
+            if ($(".main-header").length) {
+                // @ts-ignore
+                var windowpos = $(window).scrollTop()
+                // @ts-ignore
+                var siteHeader = $(".header-style-one")
+                // @ts-ignore
+                var scrollLink = $(".scroll-to-top")
+                // @ts-ignore
+                var sticky_header = $(".main-header .sticky-header")
+                if (windowpos > 100) {
+                    sticky_header.addClass("fixed-header animated slideInDown")
+                    scrollLink.fadeIn(300)
+                } else {
+                    sticky_header.removeClass("fixed-header animated slideInDown")
+                    scrollLink.fadeOut(300)
+                }
+                if (windowpos > 1) {
+                    siteHeader.addClass("fixed-header")
+                } else {
+                    siteHeader.removeClass("fixed-header")
+                }
+            }
+        }
+
+        //Mobile Nav Hide Show
+        // @ts-ignore
+        if ($(".mobile-menu").length) {
+            // @ts-ignore
+            var mobileMenuContent = $(".main-header .main-menu .navigation").html()
+            // @ts-ignore
+            $(".mobile-menu .navigation").append(mobileMenuContent)
+            // @ts-ignore
+            $(".sticky-header .navigation").append(mobileMenuContent)
+            // @ts-ignore
+            $(".mobile-menu .close-btn").on("click", function () {
+                // @ts-ignore
+                $("body").removeClass("mobile-menu-visible")
+            })
+
+            //Dropdown Button
+            // @ts-ignore
+            $(".mobile-menu li.dropdown .dropdown-btn").on("click", function () {
+                // @ts-ignore
+                $(this).prev("ul").slideToggle(500)
+                // @ts-ignore
+                $(this).toggleClass("active")
+            })
+
+            //Menu Toggle Btn
+            // @ts-ignore
+            $(".mobile-nav-toggler").on("click", function () {
+                // @ts-ignore
+                $("body").addClass("mobile-menu-visible")
+            })
+
+            //Menu Toggle Btn
+            // @ts-ignore
+            $(".mobile-menu .menu-backdrop, .mobile-menu .close-btn").on("click", function () {
+                // @ts-ignore
+                $("body").removeClass("mobile-menu-visible")
+            })
+        }
+
+        // @ts-ignore
+        $(window).on("scroll", function () {
+            headerStyle()
+        })
+        headerStyle()
+    }, [])
+    const { pathname } = useLocation()
     return (
         <header className="main-header header-style-one">
             {/* <!-- Header Top --> */}
@@ -68,55 +170,22 @@ export default function Header({}: Props) {
                     <div className="nav-outer">
                         <nav className="nav main-menu">
                             <ul className="navigation">
-                                <li className="current dropdown">
-                                    <RouterNavLink href="index.html">Home</RouterNavLink>
-                                    <ul>
-                                        <li>
-                                            <RouterNavLink href="index.html">Home page 01</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="index-2.html">Home page 02</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="index-3.html">Home page 03</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="index-4.html">Home page 04</RouterNavLink>
-                                        </li>
-                                        <li className="dropdown">
-                                            <RouterNavLink href="#">Single Styles</RouterNavLink>
-                                            <ul>
-                                                <li>
-                                                    <RouterNavLink href="index-1-single.html">
-                                                        Single Style One
-                                                    </RouterNavLink>
-                                                </li>
-                                                <li>
-                                                    <RouterNavLink href="index-2-single.html">
-                                                        Single Style Two
-                                                    </RouterNavLink>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="dropdown">
-                                            <RouterNavLink href="#">Dark Styles</RouterNavLink>
-                                            <ul>
-                                                <li>
-                                                    <RouterNavLink href="index-1-dark.html">
-                                                        Dark Style One
-                                                    </RouterNavLink>
-                                                </li>
-                                                <li>
-                                                    <RouterNavLink href="index-2-dark.html">
-                                                        Dark Style Two
-                                                    </RouterNavLink>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="index-1-rtl.html">RTL Style One</RouterNavLink>
-                                        </li>
-                                    </ul>
+                                {menus.map((menu: any, id: number) => (
+                                    <li
+                                        key={menu.path}
+                                        className={
+                                            menu.exact && pathname === menu.path
+                                                ? "current"
+                                                : !menu.exact && pathname.startsWith(menu.path)
+                                                ? "current"
+                                                : ""
+                                        }
+                                    >
+                                        <RouterNavLink href={menu.path}>{menu.name}</RouterNavLink>
+                                    </li>
+                                ))}
+                                {/* <li className="current">
+                                    <RouterNavLink href="/">Home</RouterNavLink>
                                 </li>
                                 <li className="dropdown">
                                     <RouterNavLink href="#">Pages</RouterNavLink>
@@ -216,7 +285,7 @@ export default function Header({}: Props) {
                                 </li>
                                 <li>
                                     <RouterNavLink href="page-contact.html">Contact</RouterNavLink>
-                                </li>
+                                </li> */}
                             </ul>
                         </nav>
                         {/* <!-- Main Menu End--> */}
@@ -254,7 +323,7 @@ export default function Header({}: Props) {
                         <div className="nav-logo">
                             <RouterNavLink href="/">
                                 <img
-                                    src="images/logo.png"
+                                    src="/images/logo.png"
                                     alt="Access Energy Engineering"
                                     title="Access Energy Engineering"
                                 />
@@ -331,7 +400,7 @@ export default function Header({}: Props) {
                 <div className="search-inner">
                     <form method="post" action="index.html">
                         <div className="form-group">
-                            <input type="search" name="search-field" value="" placeholder="Search..." required />
+                            <input type="search" name="search-field" defaultValue="" placeholder="Search..." required />
                             <button type="submit">
                                 <i className="fa fa-search"></i>
                             </button>
@@ -349,7 +418,7 @@ export default function Header({}: Props) {
                         <div className="logo">
                             <RouterNavLink href="/" title="">
                                 <img
-                                    src="images/logo.png"
+                                    src="/images/logo.png"
                                     alt="Access Energy Engineering"
                                     title="Access Energy Engineering"
                                 />

@@ -21,7 +21,7 @@ export default function MainSlider({}: Props) {
                             {/* <!-- Slide 1 --> */}
                             <li data-index="rs-1" data-transition="zoomout">
                                 {/* <!-- MAIN IMAGE --> */}
-                                <img src="images/main-slider/1.jpg" alt="" className="rev-slidebg" />
+                                <img src="/images/main-slider/1.jpg" alt="" className="rev-slidebg" />
                                 <div
                                     className="tp-caption"
                                     data-paddingbottom="[0,0,0,0]"
@@ -95,7 +95,7 @@ export default function MainSlider({}: Props) {
                             {/* <!-- Slide 1 --> */}
                             <li data-index="rs-2" data-transition="zoomout">
                                 {/* <!-- MAIN IMAGE --> */}
-                                <img src="images/main-slider/2.jpg" alt="" className="rev-slidebg" />
+                                <img src="/images/main-slider/2.jpg" alt="" className="rev-slidebg" />
                                 <div
                                     className="tp-caption"
                                     data-paddingbottom="[0,0,0,0]"

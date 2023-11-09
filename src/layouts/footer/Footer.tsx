@@ -22,7 +22,7 @@ export default function Footer(props: Props) {
         <>
             {/* <!-- Main Footer --> */}
             <footer className="main-footer">
-                <div className="bg-image" style={{ backgroundImage: "url(./images/background/5.jpg)" }}></div>
+                <div className="bg-image" style={{ backgroundImage: "url(/images/background/5.jpg)" }}></div>
 
                 {/* <!-- Contact info --> */}
                 <div className="contacts-outer">
@@ -100,8 +100,8 @@ export default function Footer(props: Props) {
                                 <div className="footer-widget">
                                     <h3 className="widget-title">Service</h3>
                                     <ul className="user-links">
-                                        {contact.service.map((item) => (
-                                            <li>
+                                        {contact.service.map((item, id) => (
+                                            <li key={id}>
                                                 <a href={`#${item.url}`}>{item.name}</a>
                                             </li>
                                         ))}
@@ -117,37 +117,37 @@ export default function Footer(props: Props) {
                                         <div className="outer clearfix">
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img src="images/resource/project-thumb-1.jpg" alt="" />
+                                                    <img src="/images/resource/project-thumb-1.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img src="images/resource/project-thumb-2.jpg" alt="" />
+                                                    <img src="/images/resource/project-thumb-2.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img src="images/resource/project-thumb-3.jpg" alt="" />
+                                                    <img src="/images/resource/project-thumb-3.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img src="images/resource/project-thumb-4.jpg" alt="" />
+                                                    <img src="/images/resource/project-thumb-4.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img src="images/resource/project-thumb-5.jpg" alt="" />
+                                                    <img src="/images/resource/project-thumb-5.jpg" alt="" />
                                                 </a>
                                             </figure>
 
                                             <figure className="image">
                                                 <a href="#">
-                                                    <img src="images/resource/project-thumb-6.jpg" alt="" />
+                                                    <img src="/images/resource/project-thumb-6.jpg" alt="" />
                                                 </a>
                                             </figure>
                                         </div>
@@ -170,7 +170,7 @@ export default function Footer(props: Props) {
                                                         type="email"
                                                         name="email"
                                                         className="email"
-                                                        value=""
+                                                        defaultValue=""
                                                         placeholder="Email Address"
                                                         required
                                                     />
