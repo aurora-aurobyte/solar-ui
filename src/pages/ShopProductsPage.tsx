@@ -55,9 +55,9 @@ export default function ShopProductsPage({}: Props) {
                                     </div>
                                     <div className="content">
                                         <h4>
-                                            <RouterLink href="/products/1">Show Piece</RouterLink>
+                                            <RouterLink href="/products/1">On Grid Solar Power System</RouterLink>
                                         </h4>
-                                        <span className="price">$32.00</span>
+                                        <span className="price">Rs. 36,470</span>
                                         <span className="rating">
                                             <i className="fa fa-star"></i>
                                             <i className="fa fa-star"></i>
@@ -87,9 +87,9 @@ export default function ShopProductsPage({}: Props) {
                                     </div>
                                     <div className="content">
                                         <h4>
-                                            <RouterLink href="/products/2">Leather Belt</RouterLink>
+                                            <RouterLink href="/products/2">30A PWM Solar Charge Controller</RouterLink>
                                         </h4>
-                                        <span className="price">$52.00</span>
+                                        <span className="price">Rs 2,250</span>
                                         <span className="rating">
                                             <i className="fa fa-star"></i>
                                             <i className="fa fa-star"></i>
@@ -119,9 +119,9 @@ export default function ShopProductsPage({}: Props) {
                                     </div>
                                     <div className="content">
                                         <h4>
-                                            <RouterLink href="/products/3">Sunglasses</RouterLink>
+                                            <RouterLink href="/products/3">6V-1W (160mA) Solar Panel 110x60</RouterLink>
                                         </h4>
-                                        <span className="price">$42.00</span>
+                                        <span className="price">Rs. 390</span>
                                         <span className="rating">
                                             <i className="fa fa-star"></i>
                                             <i className="fa fa-star"></i>
@@ -151,9 +151,11 @@ export default function ShopProductsPage({}: Props) {
                                     </div>
                                     <div className="content">
                                         <h4>
-                                            <RouterLink href="/products/4">Backpack</RouterLink>
+                                            <RouterLink href="/products/4">
+                                                9V-2W (220mA) Solar Panel 115x115
+                                            </RouterLink>
                                         </h4>
-                                        <span className="price">$22.00</span>
+                                        <span className="price">Rs. 550</span>
                                         <span className="rating">
                                             <i className="fa fa-star"></i>
                                             <i className="fa fa-star"></i>
