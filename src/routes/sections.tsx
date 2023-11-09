@@ -53,6 +53,13 @@ export default function Router() {
                         { path: ":productId", element: <ShopProductDetailsPage /> },
                     ],
                 },
+                {
+                    path: "news",
+                    children: [
+                        { element: <NewsGrid />, index: true },
+                        { path: ":newsId", element: <NewsPage /> },
+                    ],
+                },
             ],
         },
         {

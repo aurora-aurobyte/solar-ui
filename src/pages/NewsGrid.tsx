@@ -1,3 +1,5 @@
+import { RouterLink } from "routes/components"
+
 type Props = {}
 
 export default function NewsGrid({}: Props) {
@@ -12,9 +14,9 @@ export default function NewsGrid({}: Props) {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="news-details.html">
+                                        <RouterLink href="/news/1">
                                             <img src="/images/resource/news-1.jpg" alt="" />
-                                        </a>
+                                        </RouterLink>
                                     </figure>
                                     <span className="date">
                                         <b>28</b> SEP
@@ -30,7 +32,9 @@ export default function NewsGrid({}: Props) {
                                         </li>
                                     </ul>
                                     <h4 className="title">
-                                        <a href="news-details.html">Winds of Change in the Turbine Service Industry</a>
+                                        <RouterLink href="/news/1">
+                                            Winds of Change in the Turbine Service Industry
+                                        </RouterLink>
                                     </h4>
                                 </div>
                             </div>
@@ -40,9 +44,9 @@ export default function NewsGrid({}: Props) {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="news-details.html">
+                                        <RouterLink href="/news/1">
                                             <img src="/images/resource/news-2.jpg" alt="" />
-                                        </a>
+                                        </RouterLink>
                                     </figure>
                                     <span className="date">
                                         <b>28</b> SEP
@@ -58,7 +62,9 @@ export default function NewsGrid({}: Props) {
                                         </li>
                                     </ul>
                                     <h4 className="title">
-                                        <a href="news-details.html">Powering Asia Pacific’s Energy Transition</a>
+                                        <RouterLink href="/news/1">
+                                            Powering Asia Pacific’s Energy Transition
+                                        </RouterLink>
                                     </h4>
                                 </div>
                             </div>
@@ -68,9 +74,9 @@ export default function NewsGrid({}: Props) {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="news-details.html">
+                                        <RouterLink href="/news/1">
                                             <img src="/images/resource/news-3.jpg" alt="" />
-                                        </a>
+                                        </RouterLink>
                                     </figure>
                                     <span className="date">
                                         <b>28</b> SEP
@@ -86,7 +92,9 @@ export default function NewsGrid({}: Props) {
                                         </li>
                                     </ul>
                                     <h4 className="title">
-                                        <a href="news-details.html">Helping Companies in Their Green Transition</a>
+                                        <RouterLink href="/news/1">
+                                            Helping Companies in Their Green Transition
+                                        </RouterLink>
                                     </h4>
                                 </div>
                             </div>
@@ -96,9 +104,9 @@ export default function NewsGrid({}: Props) {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="news-details.html">
+                                        <RouterLink href="/news/1">
                                             <img src="/images/resource/news-3.jpg" alt="" />
-                                        </a>
+                                        </RouterLink>
                                     </figure>
                                     <span className="date">
                                         <b>28</b> SEP
@@ -114,7 +122,9 @@ export default function NewsGrid({}: Props) {
                                         </li>
                                     </ul>
                                     <h4 className="title">
-                                        <a href="news-details.html">Helping Companies in Their Green Transition</a>
+                                        <RouterLink href="/news/1">
+                                            Helping Companies in Their Green Transition
+                                        </RouterLink>
                                     </h4>
                                 </div>
                             </div>
@@ -124,9 +134,9 @@ export default function NewsGrid({}: Props) {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="news-details.html">
+                                        <RouterLink href="/news/1">
                                             <img src="/images/resource/news-1.jpg" alt="" />
-                                        </a>
+                                        </RouterLink>
                                     </figure>
                                     <span className="date">
                                         <b>28</b> SEP
@@ -142,7 +152,9 @@ export default function NewsGrid({}: Props) {
                                         </li>
                                     </ul>
                                     <h4 className="title">
-                                        <a href="news-details.html">Winds of Change in the Turbine Service Industry</a>
+                                        <RouterLink href="/news/1">
+                                            Winds of Change in the Turbine Service Industry
+                                        </RouterLink>
                                     </h4>
                                 </div>
                             </div>
@@ -152,9 +164,9 @@ export default function NewsGrid({}: Props) {
                             <div className="inner-box">
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="news-details.html">
+                                        <RouterLink href="/news/1">
                                             <img src="/images/resource/news-2.jpg" alt="" />
-                                        </a>
+                                        </RouterLink>
                                     </figure>
                                     <span className="date">
                                         <b>28</b> SEP
@@ -170,7 +182,9 @@ export default function NewsGrid({}: Props) {
                                         </li>
                                     </ul>
                                     <h4 className="title">
-                                        <a href="news-details.html">Powering Asia Pacific’s Energy Transition</a>
+                                        <RouterLink href="/news/1">
+                                            Powering Asia Pacific’s Energy Transition
+                                        </RouterLink>
                                     </h4>
                                 </div>
                             </div>
