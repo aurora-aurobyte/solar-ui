@@ -200,7 +200,7 @@ export default function ShopProductDetailsPage({}: Props) {
                         <div className="col-lg-6 col-xl-6 product-info">
                             <div className="product-details__top">
                                 <h3 className="product-details__title">
-                                    Backpack <span>$76.00</span>{" "}
+                                    AE SOlar Panel <span>Rs. 35,500</span>{" "}
                                 </h3>
                             </div>
                             <div className="product-details__reveiw">
@@ -213,9 +213,9 @@ export default function ShopProductDetailsPage({}: Props) {
                             </div>
                             <div className="product-details__content">
                                 <p className="product-details__content-text1">
-                                    Aliquam hendrerit a augue insuscipit. Etiam aliquam massa quis des mauris commodo
-                                    venenatis ligula commodo leez sed blandit convallis dignissim onec vel pellentesque
-                                    neque.
+                                    AE Solar, TIER1 manufacturer from Germany has proven itself to be a dynamic and
+                                    progressive enterprise, positioning itself as one of the leading privately-owned
+                                    businesses since its inception in 2003.
                                 </p>
                                 <p className="product-details__content-text2">
                                     <strong>REF.</strong> 4231/406 <br />
