@@ -7,7 +7,7 @@ export default function About({}: Props) {
             <section className="about-section-home1">
                 <img className="about-bg-home1" src="/images/background/about1-bg-home1.jpg" alt="" />
                 <div className="anim-icons">
-                    <div className="float-text wow zoomInLeft">Soluris</div>
+                    <div className="float-text wow zoomInLeft">Access Energy Engineering</div>
                 </div>
                 <div className="auto-container">
                     <div className="row">
