@@ -156,7 +156,15 @@ export default function ContactPage({}: Props) {
 
             {/* <!-- Map Section--> */}
             <section className="map-section">
-                <iframe className="map w-100" src="https://maps.app.goo.gl/CbATtKMiWk12ADJAA"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15733.069324337113!2d80.0172569!3d9.6581841!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afe57815046d813%3A0xc442742402956e36!2sAccess%20Energy%20Engineering!5e0!3m2!1sen!2slk!4v1701189060399!5m2!1sen!2slk"
+                    width="100%"
+                    height={500}
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                />
             </section>
             {/* <!--End Map Section--> */}
         </>
