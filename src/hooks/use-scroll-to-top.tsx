@@ -17,9 +17,9 @@ export function useScrollToTop() {
         window.fancyBox()
 
         // @ts-ignore
-        if (window.$(".wow").length) {
+        if ($(".wow").length) {
             // @ts-ignore
-            var wow = new window.WOW({
+            var wow = new WOW({
                 boxClass: "wow", // animated element css class (default is wow)
                 animateClass: "animated", // animation css class (default is animated)
                 offset: 0, // distance to the element when triggering the animation (default is 0)
@@ -30,9 +30,9 @@ export function useScrollToTop() {
         }
 
         // @ts-ignore
-        if (window.$(".filter-list").length) {
+        if ($(".filter-list").length) {
             // @ts-ignore
-            window.$(".filter-list").mixItUp({})
+            $(".filter-list").mixItUp({})
         }
     }, [pathname])
 

@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { RouterLink, RouterNavLink } from "routes/components"
+import Navigation from "./Navigation"
 
 type Props = {}
 
@@ -62,12 +63,6 @@ export default function Header({}: Props) {
         //Mobile Nav Hide Show
         // @ts-ignore
         if ($(".mobile-menu").length) {
-            // @ts-ignore
-            var mobileMenuContent = $(".main-header .main-menu .navigation").html()
-            // @ts-ignore
-            $(".mobile-menu .navigation").append(mobileMenuContent)
-            // @ts-ignore
-            $(".sticky-header .navigation").append(mobileMenuContent)
             // @ts-ignore
             $(".mobile-menu .close-btn").on("click", function () {
                 // @ts-ignore
@@ -170,122 +165,7 @@ export default function Header({}: Props) {
                     <div className="nav-outer">
                         <nav className="nav main-menu">
                             <ul className="navigation">
-                                {menus.map((menu: any, id: number) => (
-                                    <li
-                                        key={menu.path}
-                                        className={
-                                            menu.exact && pathname === menu.path
-                                                ? "current"
-                                                : !menu.exact && pathname.startsWith(menu.path)
-                                                ? "current"
-                                                : ""
-                                        }
-                                    >
-                                        <RouterNavLink href={menu.path}>{menu.name}</RouterNavLink>
-                                    </li>
-                                ))}
-                                {/* <li className="current">
-                                    <RouterNavLink href="/">Home</RouterNavLink>
-                                </li>
-                                <li className="dropdown">
-                                    <RouterNavLink href="#">Pages</RouterNavLink>
-                                    <ul>
-                                        <li>
-                                            <RouterNavLink href="page-about.html">About</RouterNavLink>
-                                        </li>
-                                        <li className="dropdown">
-                                            <RouterNavLink href="#">Projects</RouterNavLink>
-                                            <ul>
-                                                <li>
-                                                    <RouterNavLink href="page-projects.html">
-                                                        Projects List
-                                                    </RouterNavLink>
-                                                </li>
-                                                <li>
-                                                    <RouterNavLink href="page-project-details.html">
-                                                        Project Details
-                                                    </RouterNavLink>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li className="dropdown">
-                                            <RouterNavLink href="#">Team</RouterNavLink>
-                                            <ul>
-                                                <li>
-                                                    <RouterNavLink href="page-team.html">Team List</RouterNavLink>
-                                                </li>
-                                                <li>
-                                                    <RouterNavLink href="page-team-details.html">
-                                                        Team Details
-                                                    </RouterNavLink>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="page-testimonial.html">Testimonial</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="page-pricing.html">Pricing</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="page-faq.html">FAQ</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="page-404.html">Page 404</RouterNavLink>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="dropdown">
-                                    <RouterNavLink href="#">Services</RouterNavLink>
-                                    <ul>
-                                        <li>
-                                            <RouterNavLink href="page-services.html">Services List</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="page-service-details.html">
-                                                Service Details
-                                            </RouterNavLink>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="dropdown">
-                                    <RouterNavLink href="#">Shop</RouterNavLink>
-                                    <ul>
-                                        <li>
-                                            <RouterNavLink href="shop-products.html">Products</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="shop-products-sidebar.html">
-                                                Products with Sidebar
-                                            </RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="shop-product-details.html">
-                                                Product Details
-                                            </RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="shop-cart.html">Cart</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="shop-checkout.html">Checkout</RouterNavLink>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="dropdown">
-                                    <RouterNavLink href="#">News</RouterNavLink>
-                                    <ul>
-                                        <li>
-                                            <RouterNavLink href="news-grid.html">News Grid</RouterNavLink>
-                                        </li>
-                                        <li>
-                                            <RouterNavLink href="news-details.html">News Details</RouterNavLink>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <RouterNavLink href="page-contact.html">Contact</RouterNavLink>
-                                </li> */}
+                                <Navigation />
                             </ul>
                         </nav>
                         {/* <!-- Main Menu End--> */}
@@ -335,7 +215,7 @@ export default function Header({}: Props) {
                     </div>
 
                     <ul className="navigation clearfix">
-                        {/* <!--Keep This Empty / Menu will come through Javascript--> */}
+                        <Navigation />
                     </ul>
                     <ul className="contact-list-one">
                         <li>
@@ -431,7 +311,7 @@ export default function Header({}: Props) {
                             <nav className="main-menu">
                                 <div className="navbar-collapse show collapse clearfix">
                                     <ul className="navigation clearfix">
-                                        {/* <!--Keep This Empty / Menu will come through Javascript--> */}
+                                        <Navigation />
                                     </ul>
                                 </div>
                             </nav>
