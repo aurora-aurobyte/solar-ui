@@ -1,4 +1,76 @@
-import React from "react"
+interface Plan {
+    capacity: number
+    panel: number
+    unitFrom: number
+    unitTo: number
+    area: number
+}
+
+const plans: Plan[] = [
+    {
+        capacity: 2,
+        panel: 5,
+        unitFrom: 234,
+        unitTo: 270,
+        area: 144,
+    },
+    {
+        capacity: 3,
+        panel: 8,
+        unitFrom: 312,
+        unitTo: 360,
+        area: 192,
+    },
+    {
+        capacity: 4,
+        panel: 10,
+        unitFrom: 468,
+        unitTo: 540,
+        area: 288,
+    },
+    {
+        capacity: 5,
+        panel: 13,
+        unitFrom: 546,
+        unitTo: 630,
+        area: 336,
+    },
+    {
+        capacity: 6,
+        panel: 15,
+        unitFrom: 702,
+        unitTo: 810,
+        area: 432,
+    },
+    {
+        capacity: 7,
+        panel: 18,
+        unitFrom: 858,
+        unitTo: 990,
+        area: 528,
+    },
+    {
+        capacity: 10,
+        panel: 25,
+        unitFrom: 1209,
+        unitTo: 1395,
+        area: 744,
+    },
+    {
+        capacity: 15,
+        panel: 38,
+        unitFrom: 1833,
+        unitTo: 2115,
+        area: 1128,
+    },
+    {
+        capacity: 20,
+        panel: 50,
+        unitFrom: 2496,
+        unitTo: 2880,
+        area: 1536,
+    },
+]
 
 type Props = {}
 
@@ -10,11 +82,11 @@ export default function TableComponent({}: Props) {
                     <span className="sub-title">SPECIALISE IN THE ENERGY SERVICE</span>
                     <h2>Save Energy and make profit for your solar system</h2>
                 </div>
-                <div className="row justify-content-end">
-                    <div className="col-md-9  col-sm-6 col-xl-8">
-                        <div className="table-responsive">
+                <div className="justify-content-center">
+                    <div className="container">
+                        <div className="table-responsive wow fadeInUp">
                             <table className="table table-striped table-bordered tbl-shopping-cart">
-                                <thead style={{ backgroundColor: "yellow" }}>
+                                <thead>
                                     <tr>
                                         <th>
                                             <span>System Capacity</span>
@@ -43,12 +115,16 @@ export default function TableComponent({}: Props) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr className="cart_item">
-                                        <td className="product-thumbnail">2KW</td>
-                                        <td className="product-price">5</td>
-                                        <td className="product-quantity">300-400</td>
-                                        <td className="product-subtotal">144</td>
-                                    </tr>
+                                    {plans.map((plan: Plan, id: number) => (
+                                        <tr key={id} className="cart_item">
+                                            <td className="product-thumbnail">{plan.capacity}KW</td>
+                                            <td className="product-price">{plan.panel}</td>
+                                            <td className="product-quantity">
+                                                {plan.unitFrom}-{plan.unitTo}
+                                            </td>
+                                            <td className="product-subtotal">{plan.area}</td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>

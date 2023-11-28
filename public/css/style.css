@@ -46,10 +46,12 @@ License: copyright commercial
 @import url("tm-utility-classes.css");
 :root {
   --theme-color1: #87AB42;
+  --theme-light-color1: #b8ce8f;
   --theme-color2: #ff6d2e;
   --theme-color3: #0E233E;
   --theme-color4: #0B3B5E;
   --bg-theme-color1: var(--theme-color1);
+  --bg-theme-light-color1: var(--theme-light-color1);
   --bg-theme-color2: var(--theme-color2);
   --bg-theme-color3: var(--theme-color3);
   --border-theme-color1: var(--theme-color1);

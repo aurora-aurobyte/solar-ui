@@ -1,3 +1,22 @@
 .logo img {
     width: 150px;
 }
+
+table.tbl-shopping-cart > thead > tr > th, table.tbl-shopping-cart > tbody > tr > th, table.tbl-shopping-cart > tfoot > tr > th {
+    color: #ffffff;
+    --bs-table-accent-bg: var(--theme-color1);
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: unset;
+}
+.table-striped>tbody>tr:nth-of-type(even)>* {
+    --bs-table-accent-bg: var(--bg-theme-light-color1);
+}
+
+@media (max-width: 1200px) {
+    .play-now-two {
+        height: 50px;
+        width: 50px;
+    }
+}
