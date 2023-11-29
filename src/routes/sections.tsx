@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react"
 import { Outlet, Navigate, useRoutes } from "react-router-dom"
 
 import Layout from "layouts"
+import Fonts from "components/Fonts"
 
 export const HomePage = lazy(() => import("pages/HomePage"))
 export const AboutPage = lazy(() => import("pages/AboutPage"))
@@ -59,6 +60,10 @@ export default function Router() {
                         { element: <NewsGrid />, index: true },
                         { path: ":newsId", element: <NewsPage /> },
                     ],
+                },
+                {
+                    path: "fonts",
+                    element: <Fonts />,
                 },
             ],
         },

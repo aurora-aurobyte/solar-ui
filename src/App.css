@@ -14,6 +14,19 @@ table.tbl-shopping-cart > thead > tr > th, table.tbl-shopping-cart > tbody > tr 
     --bs-table-accent-bg: var(--bg-theme-light-color1);
 }
 
+.service-block.about {
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+@media (max-width: 991.98px) {
+    .service-block.about {
+        margin-bottom: 30px;
+    }
+
+}
+
 @media (max-width: 1200px) {
     .play-now-two {
         height: 50px;
