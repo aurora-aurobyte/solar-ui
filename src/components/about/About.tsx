@@ -1,3 +1,5 @@
+import { RouterLink } from "routes/components"
+
 type Props = {}
 
 export default function About({}: Props) {
@@ -48,9 +50,9 @@ export default function About({}: Props) {
                                         </a>
                                     </div>
                                 </div>
-                                <a className="theme-btn btn-style-one mt-2" href="page-about.html">
+                                <RouterLink className="theme-btn btn-style-one mt-2" href="/contact-us">
                                     Explore Now
-                                </a>
+                                </RouterLink>
                             </div>
                         </div>
                         {/* <!-- Image Column --> */}

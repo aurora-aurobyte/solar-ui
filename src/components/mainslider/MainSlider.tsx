@@ -1,11 +1,12 @@
 import { useEffect } from "react"
+import { RouterLink } from "routes/components"
 
 type Props = {}
 
 export default function MainSlider({}: Props) {
     useEffect(() => {
         // @ts-ignore
-        window.mainSlider()
+        mainSlider()
     }, [])
     return (
         <>
@@ -86,9 +87,9 @@ export default function MainSlider({}: Props) {
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                                 >
-                                    <a href="page-about.html" className="theme-btn btn-style-one hvr-light">
+                                    <RouterLink href="/products" className="theme-btn btn-style-one hvr-light">
                                         <span className="btn-title">Discover More</span>
-                                    </a>
+                                    </RouterLink>
                                 </div>
                             </li>
 
@@ -161,9 +162,9 @@ export default function MainSlider({}: Props) {
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                                 >
-                                    <a href="page-about.html" className="theme-btn btn-style-one hvr-light">
+                                    <RouterLink href="/news" className="theme-btn btn-style-one hvr-light">
                                         <span className="btn-title">Explore More</span>
-                                    </a>
+                                    </RouterLink>
                                 </div>
                             </li>
                         </ul>
