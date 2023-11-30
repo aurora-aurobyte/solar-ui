@@ -48,6 +48,13 @@ export default function Router() {
                 { path: "about", element: <AboutPage /> },
                 { path: "contact-us", element: <ContactPage /> },
                 {
+                    path: "services",
+                    children: [
+                        { element: <ServicesPage />, index: true },
+                        { path: ":serviceId", element: <ServiceDetailsPage /> },
+                    ],
+                },
+                {
                     path: "products",
                     children: [
                         { element: <ShopProductsPage />, index: true },

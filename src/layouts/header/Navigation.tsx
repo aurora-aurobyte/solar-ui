@@ -13,6 +13,10 @@ const menus = [
         exact: true,
     },
     {
+        name: "Services",
+        path: "/services",
+    },
+    {
         name: "Products",
         path: "/products",
     },

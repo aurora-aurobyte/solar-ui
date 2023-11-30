@@ -1,22 +1,17 @@
+import PageTitle from "components/common/PageTitle"
+
 type Props = {}
 
 export default function ServiceDetailsPage({}: Props) {
     return (
         <>
-            {/* <!-- Start main-content --> */}
-            <section className="page-title" style={{ backgroundImage: "url(images/background/page-title-bg.png)" }}>
-                <div className="auto-container">
-                    <div className="title-outer text-center">
-                        <h1 className="title">Service Details</h1>
-                        <ul className="page-breadcrumb">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>Services</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <PageTitle
+                title="Service Details"
+                links={[
+                    { title: "Home", href: "/" },
+                    { title: "Services", href: "/services" },
+                ]}
+            />
 
             {/* <!--Start Services Details--> */}
             <section className="services-details">

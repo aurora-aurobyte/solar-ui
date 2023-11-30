@@ -5,32 +5,6 @@ import Navigation from "./Navigation"
 
 type Props = {}
 
-const menus = [
-    {
-        name: "Home",
-        path: "/",
-        exact: true,
-    },
-    {
-        name: "About",
-        path: "/about",
-        exact: true,
-    },
-    {
-        name: "Products",
-        path: "/products",
-    },
-    {
-        name: "News Feeds",
-        path: "/news",
-    },
-    {
-        name: "Contact",
-        path: "/contact-us",
-        exact: true,
-    },
-]
-
 export default function Header({}: Props) {
     useEffect(() => {
         //Update Header Style and Scroll to Top
