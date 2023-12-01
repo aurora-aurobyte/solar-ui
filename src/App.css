@@ -45,6 +45,27 @@ table.tbl-shopping-cart > thead > tr > th, table.tbl-shopping-cart > tbody > tr 
     position: relative;
 }
 
+.product-block .ui-btn.fav {
+    background-color: var(--theme-color2);
+}
+
+.product-block .ui-btn.fav::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    display: block;
+    height: 54px;
+    width: 54px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 9;
+    border-radius: 50%;
+
+    border: 4px solid var(--theme-color1);
+    z-index: -1;
+}
+
 @media (max-width: 991.98px) {
     .service-block.about {
         margin-bottom: 30px;

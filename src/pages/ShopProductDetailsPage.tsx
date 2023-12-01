@@ -292,7 +292,7 @@ export default function ShopProductDetailsPage({}: Props) {
                                         <p className="product-description__text1">{product.description}</p>
                                         <div className="product-description__list">
                                             <ul className="list-unstyled">
-                                                {product.features?.map((feature: string, id: string) => (
+                                                {product.features?.map((feature: string, id: number) => (
                                                     <li key={id}>
                                                         <p>
                                                             <span className="fa fa-arrow-right"></span> {feature}

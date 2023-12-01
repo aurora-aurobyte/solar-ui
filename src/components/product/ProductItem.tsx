@@ -10,9 +10,11 @@ export type Product = {
 
 type Props = {
     product: Product
+    favourite: boolean
+    onClickFavourite: (id: string) => void
 }
 
-const ProductItem = ({ product }: Props) => {
+const ProductItem = ({ product, favourite, onClickFavourite }: Props) => {
     const navigateTo = "/products/" + product.id
     return (
         <div className="product-block  col-lg-3 col-md-6 col-sm-12">
@@ -36,9 +38,12 @@ const ProductItem = ({ product }: Props) => {
                     </span> */}
                 </div>
                 <div className="icon-box">
-                    <RouterLink href={navigateTo} className="ui-btn like-btn">
+                    <span
+                        className={"ui-btn like-btn " + (favourite ? "fav" : "")}
+                        onClick={() => onClickFavourite(product.id)}
+                    >
                         <i className="fa fa-heart"></i>
-                    </RouterLink>
+                    </span>
                     <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
                         <i className="fa fa-shopping-cart"></i>
                     </RouterLink>

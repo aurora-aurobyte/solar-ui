@@ -1,7 +1,7 @@
 import PageTitle from "components/common/PageTitle"
 import { RouterLink } from "routes/components"
 import ProductItem, { Product } from "components/product/ProductItem"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 type Category = {
     id: string
@@ -106,6 +106,22 @@ const products: Product[] = [
 
 export default function ShopProductsPage({}: Props) {
     const [selectedCategory, setSelectedCategory] = useState("all")
+    const [favourites, setFavourites] = useState<string[]>(JSON.parse(localStorage.getItem("fav-products") || "[]"))
+
+    const handleFavClick = (id: string) => {
+        setFavourites((favourites: string[]) => {
+            if (favourites.includes(id)) {
+                return favourites.filter((fav: string) => id !== fav)
+            } else {
+                return [...favourites, id]
+            }
+        })
+    }
+
+    useEffect(() => {
+        localStorage.setItem("fav-products", JSON.stringify(favourites))
+    }, [favourites])
+
     return (
         <>
             <PageTitle title="Products" />
@@ -141,7 +157,11 @@ export default function ShopProductsPage({}: Props) {
                                         selectedCategory === "all" || selectedCategory === product.categoryId
                                 )
                                 .map((product: Product) => (
-                                    <ProductItem product={product} />
+                                    <ProductItem
+                                        product={product}
+                                        favourite={favourites.includes(product.id)}
+                                        onClickFavourite={handleFavClick}
+                                    />
                                 ))}
                         </div>
                     </div>
