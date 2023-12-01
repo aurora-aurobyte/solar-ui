@@ -20,6 +20,31 @@ table.tbl-shopping-cart > thead > tr > th, table.tbl-shopping-cart > tbody > tr 
     z-index: 1;
 }
 
+.featured-products .filters li:before {
+    bottom: -4px;
+}
+
+.product-block .image {
+    aspect-ratio: 1;
+}
+
+.loader-cont {
+    width: 100vw;
+    height: 100vh;
+}
+
+.product-notfound-cont {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader.inner {
+    position: relative;
+}
+
 @media (max-width: 991.98px) {
     .service-block.about {
         margin-bottom: 30px;

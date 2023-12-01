@@ -1,8 +1,108 @@
-import { useEffect } from "react"
+import Loader from "components/common/Loader"
+import { FormEvent, useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+
+type Product = {
+    id: string
+    title: string
+    description: string
+    image: string
+    subImages: string[]
+    price: number
+    rating: number
+    numOfRatings: number
+    isAvailable: boolean
+    ref: string
+    additionalDescription?: string
+    features?: string[]
+}
 
 type Props = {}
 
+const products: Product[] = [
+    {
+        id: "1",
+        title: "JinKO Solar Panel",
+        description:
+            "AE Solar, TIER1 manufacturer from Germany has proven itself to be a dynamic and progressive enterprise, positioning itself as one of the leading privately-owned businesses since its inception in 2003.",
+        image: "/images/resource/products/solar-1.jpg",
+        subImages: [
+            "/images/resource/products/product-details.jpg",
+            "/images/resource/products/product-details2.jpg",
+            "/images/resource/products/product-details3.jpg",
+        ],
+        price: 35500,
+        rating: 5,
+        numOfRatings: 2,
+        isAvailable: true,
+        ref: "4231/406",
+        additionalDescription: "This is additional",
+        features: ["Nam at elit nec", "neque suscipit"],
+    },
+    {
+        id: "2",
+        title: "AE Solar Panel",
+        description:
+            "AE Solar, TIER1 manufacturer from Germany has proven itself to be a dynamic and progressive enterprise, positioning itself as one of the leading privately-owned businesses since its inception in 2003.",
+        image: "",
+        subImages: [
+            "/images/resource/products/product-details2.jpg",
+            "/images/resource/products/product-details.jpg",
+            "/images/resource/products/product-details3.jpg",
+        ],
+        price: 45500,
+        rating: 4,
+        numOfRatings: 12,
+        isAvailable: true,
+        ref: "4231/406",
+        additionalDescription: "This is additional",
+        features: ["Nam at elit nec", "neque suscipit"],
+    },
+    {
+        id: "3",
+        title: "JA Solar Panel",
+        description:
+            "AE Solar, TIER1 manufacturer from Germany has proven itself to be a dynamic and progressive enterprise, positioning itself as one of the leading privately-owned businesses since its inception in 2003.",
+        image: "",
+        subImages: [
+            "/images/resource/products/product-details2.jpg",
+            "/images/resource/products/product-details.jpg",
+            "/images/resource/products/product-details3.jpg",
+        ],
+        price: 55500,
+        rating: 4,
+        numOfRatings: 12,
+        isAvailable: true,
+        ref: "4231/406",
+        additionalDescription: "This is additional",
+        features: ["Nam at elit nec", "neque suscipit"],
+    },
+]
+
 export default function ShopProductDetailsPage({}: Props) {
+    const { productId } = useParams()
+
+    const [product, setProduct] = useState<Product>()
+    const [loading, setLoading] = useState<boolean>(true)
+    const [quantity, setQuantity] = useState<number>(1)
+
+    const handleQuantityChange = (e: FormEvent<HTMLInputElement>) => {
+        const newValue = e.currentTarget.value
+        setQuantity(parseInt(newValue) || 0)
+    }
+
+    const incrementQuantity = (increment: number) => {
+        const incremented = quantity + increment
+        setQuantity(incremented < 0 ? 0 : incremented)
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setProduct(products.find((product: Product) => product.id === productId))
+            setLoading(false)
+        }, 2000)
+    }, [])
+
     useEffect(() => {
         //Gallery Filters
         // @ts-ignore
@@ -26,211 +126,100 @@ export default function ShopProductDetailsPage({}: Props) {
                 pagerCustom: ".product-details .slider-pager .thumb-box",
             })
         }
-    }, [])
+    }, [loading])
+
+    if (loading) return <Loader />
+
+    if (!product)
+        return (
+            <div className="product-notfound-cont">
+                <div className="alert alert-danger" role="alert">
+                    Product not found
+                </div>
+            </div>
+        )
+
+    const images: string[] = []
+    if (product.image) images.push(product.image)
+    if (product.subImages) images.push(...product.subImages)
+
     return (
         <>
-            {/* <!-- Start main-content --> */}
-            <section className="page-title" style={{ backgroundImage: "url(/images/background/page-title-bg.png)" }}>
-                <div className="auto-container">
-                    <div className="title-outer text-center">
-                        <h1 className="title">Product Deatils</h1>
-                        <ul className="page-breadcrumb">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>Shop</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- end main-content --> */}
-
             {/* <!--Product Details Start--> */}
             <section className="product-details">
                 <div className="container pb-70">
                     <div className="row">
                         <div className="col-lg-6 col-xl-6">
                             <div className="bxslider">
-                                <div className="slider-content">
-                                    <figure className="image-box">
-                                        <a
-                                            href="/images/resource/products/product-details.jpg"
-                                            className="lightbox-image"
-                                            data-fancybox="gallery"
-                                        >
-                                            <img src="/images/resource/products/product-details.jpg" alt="" />
-                                        </a>
-                                    </figure>
-                                    <div className="slider-pager">
-                                        <ul className="thumb-box">
-                                            <li>
-                                                {" "}
-                                                <a className="active" data-slide-index="0" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                            <li>
-                                                {" "}
-                                                <a data-slide-index="1" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details2.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                            <li>
-                                                {" "}
-                                                <a data-slide-index="2" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                        </ul>
+                                {images.map((image: string) => (
+                                    <div className="slider-content" key={image + "outer"}>
+                                        <figure className="image-box">
+                                            <a href={image} className="lightbox-image" data-fancybox="gallery">
+                                                <img src={image} alt={product.title} />
+                                            </a>
+                                        </figure>
+                                        <div className="slider-pager">
+                                            <ul className="thumb-box">
+                                                {images
+                                                    .filter((innerImage: string) => innerImage !== image)
+                                                    .map((innerImage: string) => (
+                                                        <li key={innerImage + "inner"}>
+                                                            {" "}
+                                                            <a
+                                                                className="active"
+                                                                data-slide-index={images.findIndex(
+                                                                    (image: string) => innerImage === image
+                                                                )}
+                                                                href="#"
+                                                            >
+                                                                <figure>
+                                                                    <img src={innerImage} alt={product.title} />
+                                                                </figure>
+                                                            </a>{" "}
+                                                        </li>
+                                                    ))}
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="slider-content">
-                                    <figure className="image-box">
-                                        <a
-                                            href="/images/resource/products/product-details2.jpg"
-                                            className="lightbox-image"
-                                            data-fancybox="gallery"
-                                        >
-                                            <img src="/images/resource/products/product-details2.jpg" alt="" />
-                                        </a>
-                                    </figure>
-                                    <div className="slider-pager">
-                                        <ul className="thumb-box">
-                                            <li>
-                                                {" "}
-                                                <a className="active" data-slide-index="0" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                            <li>
-                                                {" "}
-                                                <a data-slide-index="1" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details2.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                            <li>
-                                                {" "}
-                                                <a data-slide-index="2" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="slider-content">
-                                    <figure className="image-box">
-                                        <a
-                                            href="/images/resource/products/product-details3.jpg"
-                                            className="lightbox-image"
-                                            data-fancybox="gallery"
-                                        >
-                                            <img src="/images/resource/products/product-details3.jpg" alt="" />
-                                        </a>
-                                    </figure>
-                                    <div className="slider-pager">
-                                        <ul className="thumb-box">
-                                            <li>
-                                                {" "}
-                                                <a className="active" data-slide-index="0" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                            <li>
-                                                {" "}
-                                                <a data-slide-index="1" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details2.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                            <li>
-                                                {" "}
-                                                <a data-slide-index="2" href="#">
-                                                    <figure>
-                                                        <img
-                                                            src="/images/resource/products/product-details3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </figure>
-                                                </a>{" "}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                         <div className="col-lg-6 col-xl-6 product-info">
                             <div className="product-details__top">
                                 <h3 className="product-details__title">
-                                    AE SOlar Panel <span>Rs. 35,500</span>{" "}
+                                    {product.title} <span>Rs. {product.price}</span>{" "}
                                 </h3>
                             </div>
                             <div className="product-details__reveiw">
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <span>2 Customer Reviews</span>
+                                {new Array(product.rating).fill(1).map((_: any, id: number) => (
+                                    <i key={id} className="fa fa-star"></i>
+                                ))}
+                                <span>{product.numOfRatings} Customer Reviews</span>
                             </div>
                             <div className="product-details__content">
-                                <p className="product-details__content-text1">
-                                    AE Solar, TIER1 manufacturer from Germany has proven itself to be a dynamic and
-                                    progressive enterprise, positioning itself as one of the leading privately-owned
-                                    businesses since its inception in 2003.
-                                </p>
+                                <p className="product-details__content-text1">{product.description}</p>
                                 <p className="product-details__content-text2">
-                                    <strong>REF.</strong> 4231/406 <br />
-                                    Available in store
+                                    <strong>REF.</strong> {product.ref} <br />
+                                    {product.isAvailable ? "Available in store" : "Unavailable in store"}
                                 </p>
                             </div>
 
                             <div className="product-details__quantity">
                                 <h3 className="product-details__quantity-title">Choose quantity</h3>
                                 <div className="quantity-box">
-                                    <button type="button" className="sub text-white">
+                                    <button
+                                        type="button"
+                                        className="sub text-white"
+                                        onClick={() => incrementQuantity(-1)}
+                                    >
                                         <i className="fa fa-minus"></i>
                                     </button>
-                                    <input type="number" id="1" defaultValue="1" />
-                                    <button type="button" className="add text-white">
+                                    <input type="number" id="1" value={quantity} onChange={handleQuantityChange} />
+                                    <button
+                                        type="button"
+                                        className="add text-white"
+                                        onClick={() => incrementQuantity(1)}
+                                    >
                                         <i className="fa fa-plus"></i>
                                     </button>
                                 </div>
@@ -300,41 +289,19 @@ export default function ShopProductDetailsPage({}: Props) {
                                 <div className="tab active-tab" id="tab-1">
                                     <div className="text">
                                         <h3 className="product-description__title">Description</h3>
-                                        <p className="product-description__text1">
-                                            Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum. There
-                                            are many variations of passages of Lorem Ipsum available, but the majority
-                                            have alteration in some injected or words which don't look even slightly
-                                            believable. If you are going to use a passage of Lorem Ipsum, you need to be
-                                            sure there isn't anything embarrang hidden in the middle of text.
-                                        </p>
+                                        <p className="product-description__text1">{product.description}</p>
                                         <div className="product-description__list">
                                             <ul className="list-unstyled">
-                                                <li>
-                                                    <p>
-                                                        <span className="fa fa-arrow-right"></span> Nam at elit nec
-                                                        neque suscipit gravida.
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <span className="fa fa-arrow-right"></span> Aenean egestas orci
-                                                        eu maximus tincidunt.
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        <span className="fa fa-arrow-right"></span> Curabitur vel turpis
-                                                        id tellus cursus laoreet.
-                                                    </p>
-                                                </li>
+                                                {product.features?.map((feature: string, id: string) => (
+                                                    <li key={id}>
+                                                        <p>
+                                                            <span className="fa fa-arrow-right"></span> {feature}
+                                                        </p>
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </div>
-                                        <p className="product-description__tex2">
-                                            All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                            chunks as necessary, making this the first true generator on the Internet.
-                                            It uses a dictionary of over 200 Latin words, combined with a handful of
-                                            model sentence structures, to generate Lorem Ipsum which looks reasonable.
-                                        </p>
+                                        <p className="product-description__tex2">{product.additionalDescription}</p>
                                     </div>
                                 </div>
                                 <div className="tab" id="tab-2">

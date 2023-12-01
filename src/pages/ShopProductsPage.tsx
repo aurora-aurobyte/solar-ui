@@ -1,25 +1,115 @@
+import PageTitle from "components/common/PageTitle"
 import { RouterLink } from "routes/components"
+import ProductItem, { Product } from "components/product/ProductItem"
+import { useState } from "react"
+
+type Category = {
+    id: string
+    title: string
+}
 
 type Props = {}
 
+const categories: Category[] = [
+    { id: "1", title: "Panels" },
+    { id: "2", title: "Inverters" },
+    { id: "3", title: "Water Pump" },
+    { id: "4", title: "Street Light" },
+]
+
+const products: Product[] = [
+    {
+        id: "1",
+        title: "JinKO Solar Panel",
+        categoryId: "1",
+        image: "/images/resource/products/solar-1.jpg",
+        price: 0,
+    },
+    {
+        id: "2",
+        title: "AE Solar Panel",
+        categoryId: "1",
+        image: "/images/resource/products/solar-2.webp",
+        price: 0,
+    },
+    {
+        id: "3",
+        title: "JA Solar Panel",
+        categoryId: "1",
+        image: "/images/resource/products/solar-3.jfif",
+        price: 0,
+    },
+    {
+        id: "4",
+        title: "SMA Inverter",
+        categoryId: "2",
+        image: "/images/resource/products/Inverter-SMA.jpg",
+        price: 0,
+    },
+    {
+        id: "5",
+        title: "Solax Inverter",
+        categoryId: "2",
+        image: "/images/resource/products/Inverter-Solax.jfif",
+        price: 0,
+    },
+    {
+        id: "6",
+        title: "Solis Inverter",
+        categoryId: "2",
+        image: "/images/resource/products/Inverter-Solis.jpg",
+        price: 0,
+    },
+    {
+        id: "7",
+        title: "FIMER Inverter",
+        categoryId: "2",
+        image: "/images/resource/products/FIMER Inverter.jpg",
+        price: 0,
+    },
+    {
+        id: "8",
+        title: "Inverter deye",
+        categoryId: "2",
+        image: "/images/resource/products/deye inverter.png",
+        price: 0,
+    },
+    {
+        id: "9",
+        title: "Solar Water Panel",
+        categoryId: "1",
+        image: "/images/resource/products/Solar Water Panel.webp",
+        price: 0,
+    },
+    {
+        id: "10",
+        title: "Phoenix SPD",
+        categoryId: "1",
+        image: "/images/resource/products/phoenix spd.webp",
+        price: 0,
+    },
+    {
+        id: "11",
+        title: "Suntree SPD",
+        categoryId: "1",
+        image: "/images/resource/products/SPD Suntree.jfif",
+        price: 0,
+    },
+    {
+        id: "12",
+        title: "Street Light",
+        categoryId: "4",
+        image: "/images/resource/products/Street Light.jpeg",
+        price: 0,
+    },
+]
+
 export default function ShopProductsPage({}: Props) {
+    const [selectedCategory, setSelectedCategory] = useState("all")
     return (
         <>
-            {/* <!-- Start main-content --> */}
-            <section className="page-title" style={{ backgroundImage: "url(images/background/page-title-bg.png)" }}>
-                <div className="auto-container">
-                    <div className="title-outer text-center">
-                        <h1 className="title">Shop</h1>
-                        <ul className="page-breadcrumb">
-                            <li>
-                                <RouterLink href="/">Home</RouterLink>
-                            </li>
-                            <li>Products</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- end main-content --> */}
+            <PageTitle title="Products" />
+
             {/* 
 	<!-- Featured Products --> */}
             <section className="featured-products">
@@ -29,399 +119,30 @@ export default function ShopProductsPage({}: Props) {
                         {/* <!--Filter--> */}
                         <div className="filters clearfix">
                             <ul className="filter-tabs filter-btns clearfix">
-                                <li className="active filter" data-role="button" data-filter="panels">
-                                    Panels
-                                </li>
-                                <li className="filter" data-role="button" data-filter=".inverters">
-                                    Inverters
-                                </li>
-                                <li className="filter" data-role="button" data-filter=".waterPump">
-                                    Water Pump
-                                </li>
-                                <li className="filter" data-role="button" data-filter=".streetLight">
-                                    Street Light
-                                </li>
+                                {[{ title: "All", id: "all" }, ...categories].map((category: Category) => (
+                                    <li
+                                        key={category.id}
+                                        className={"filter " + (selectedCategory === category.id ? "active" : "")}
+                                        data-role="button"
+                                        data-filter={category.id}
+                                        onClick={() => setSelectedCategory(category.id)}
+                                    >
+                                        {category.title}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
                         <div className="filter-list row">
                             {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/solar-1.jpg" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">JinKO Solar Panel</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12">
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/2">
-                                            <img src="/images/resource/products/solar-2.webp" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/2">AE Solar Panel</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs 2,250</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/2" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12">
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/3">
-                                            <img src="/images/resource/products/solar-3.jfif" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/3">JA Solar Panel</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 390</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/3" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12">
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/4">
-                                            <img src="/images/resource/products/Inverter-SMA.jpg" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/4">
-                                            SMA Inverter
-                                            </RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 550</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/4" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/Inverter-Solax.jfif" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">Solax Inverter</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/Inverter-Solis.jpg" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">Solis Inverter</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/FIMER Inverter.jpg" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">FIMER Inverter</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/deye inverter.png" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">Inverter deye</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/Solar Water Panel.webp" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">Solar Water Panel</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/phoenix spd.webp" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">Phoenix SPD</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/SPD Suntree.jfif" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">Suntree SPD</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!--Product Block--> */}
-                            <div className="product-block  col-lg-3 col-md-6 col-sm-12" >
-                                <div className="inner-box">
-                                    <div className="image">
-                                        <RouterLink href="/products/1">
-                                            <img src="/images/resource/products/Street Light.jpeg" alt="" />
-                                        </RouterLink>
-                                    </div>
-                                    <div className="content">
-                                        <h4>
-                                            <RouterLink href="/products/1">Street Light</RouterLink>
-                                        </h4>
-                                        {/* <span className="price">Rs. 36,470</span> */}
-                                        <span className="rating">
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="icon-box">
-                                        <RouterLink href="/products/1" className="ui-btn like-btn">
-                                            <i className="fa fa-heart"></i>
-                                        </RouterLink>
-                                        <RouterLink href="/shop-cart" className="ui-btn add-to-cart">
-                                            <i className="fa fa-shopping-cart"></i>
-                                        </RouterLink>
-                                    </div>
-                                </div>
-                            </div>
+                            {products
+                                .filter(
+                                    (product: Product) =>
+                                        selectedCategory === "all" || selectedCategory === product.categoryId
+                                )
+                                .map((product: Product) => (
+                                    <ProductItem product={product} />
+                                ))}
                         </div>
                     </div>
                 </div>

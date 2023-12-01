@@ -7,10 +7,10 @@ type LinkType = {
 
 type Props = {
     title: string
-    links: LinkType[]
+    links?: LinkType[]
 }
 
-const PageTitle = ({ title, links }: Props) => {
+const PageTitle = ({ title, links = [{ title: "Home", href: "/" }] }: Props) => {
     return (
         <section className="page-title" style={{ backgroundImage: "url(/images/background/page-title-bg.png)" }}>
             <div className="auto-container">
