@@ -8,9 +8,8 @@ export const HomePage = lazy(() => import("pages/HomePage"))
 export const AboutPage = lazy(() => import("pages/AboutPage"))
 export const ContactPage = lazy(() => import("pages/ContactPage"))
 export const PricePage = lazy(() => import("pages/PricePage"))
-export const ShopCart = lazy(() => import("pages/ShopCartPage"))
 export const ShopCartPage = lazy(() => import("pages/ShopCartPage"))
-export const ShopCHeckOutPage = lazy(() => import("pages/ShopCHeckOutPage"))
+export const ShopCheckOutPage = lazy(() => import("pages/ShopCheckOutPage"))
 export const ShopProductDetailsPage = lazy(() => import("pages/ShopProductDetailsPage"))
 export const ShopProductsPage = lazy(() => import("pages/ShopProductsPage"))
 export const ProductSideBar = lazy(() => import("pages/ProductSideBar"))
@@ -66,6 +65,13 @@ export default function Router() {
                     children: [
                         { element: <NewsGrid />, index: true },
                         { path: ":newsId", element: <NewsPage /> },
+                    ],
+                },
+                {
+                    path: "shop",
+                    children: [
+                        { path: "cart", element: <ShopCartPage /> },
+                        { path: "checkout", element: <ShopCheckOutPage /> },
                     ],
                 },
                 {

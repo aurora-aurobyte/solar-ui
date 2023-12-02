@@ -2,10 +2,13 @@ import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { RouterLink, RouterNavLink } from "routes/components"
 import Navigation from "./Navigation"
+import { useAppSelector } from "store/store"
 
 type Props = {}
 
 export default function Header({}: Props) {
+    const cartItems = useAppSelector((state) => state.cart.cartItems)
+
     useEffect(() => {
         //Update Header Style and Scroll to Top
         function headerStyle() {
@@ -149,11 +152,18 @@ export default function Header({}: Props) {
                                 <span className="icon lnr lnr-icon-search"></span>
                             </button>
 
-                            <RouterNavLink href="shop-cart.html" className="ui-btn">
-                                <i className="lnr-icon-shopping-cart"></i>
+                            <RouterNavLink href="/shop/cart" className="ui-btn">
+                                <i className="lnr-icon-shopping-cart">
+                                    {cartItems.length && (
+                                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-item-count">
+                                            {cartItems.length}
+                                            <span className="visually-hidden">Cart Items</span>
+                                        </span>
+                                    )}
+                                </i>
                             </RouterNavLink>
 
-                            <RouterNavLink href="page-contact.html" className="theme-btn btn-style-one alternate">
+                            <RouterNavLink href="/contact-us" className="theme-btn btn-style-one alternate">
                                 <span className="btn-title">Get A Quote</span>
                             </RouterNavLink>
 

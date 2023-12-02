@@ -1,196 +1,139 @@
+import PageTitle from "components/common/PageTitle"
+import { ChangeEvent } from "react"
+import { RouterLink } from "routes/components"
+import { CartItem, modifyQuantity, removeCartItem } from "store/features/cartSlice"
+import { useAppDispatch, useAppSelector } from "store/store"
+
 type Props = {}
 
 export default function ShopCartPage({}: Props) {
+    const cartItems = useAppSelector((state) => state.cart.cartItems)
+    const dispatch = useAppDispatch()
+
+    const incrementQuantity = (productId: string, quantity: number) => {
+        dispatch(modifyQuantity({ productId, newQuantity: quantity }))
+    }
+
+    const handleRemoveItem = (productId: string) => {
+        dispatch(removeCartItem({ productId }))
+    }
+
     return (
         <>
-            {/* <!-- Start main-content --> */}
-            <section className="page-title" style={{ backgroundImage: "url(images/background/page-title-bg.png)" }}>
-                <div className="auto-container">
-                    <div className="title-outer text-center">
-                        <h1 className="title">Cart</h1>
-                        <ul className="page-breadcrumb">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>Cart</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- end main-content --> */}
+            <PageTitle title="Cart" />
 
             {/* <!--cart Start--> */}
             <section>
                 <div className="container pb-100">
                     <div className="section-content">
                         <div className="row">
-                            <div className="col-md-12">
-                                <div className="table-responsive">
-                                    <table className="table table-striped table-bordered tbl-shopping-cart">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Photo</th>
-                                                <th>Product Name</th>
-                                                <th>Price</th>
-                                                <th>Quantity</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr className="cart_item">
-                                                <td className="product-remove">
-                                                    <a title="Remove this item" className="remove" href="#">
-                                                        ×
-                                                    </a>
-                                                </td>
-                                                <td className="product-thumbnail">
-                                                    <a href="#">
-                                                        <img alt="product" src="/images/resource/products/1.jpg" />
-                                                    </a>
-                                                </td>
-                                                <td className="product-name">
-                                                    <a href="shop-product-details.html">Winter Black Jacket</a>
-                                                    <ul className="variation">
-                                                        <li className="variation-size">
-                                                            Size: <span>Medium</span>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                                <td className="product-price">
-                                                    <span className="amount">$36.00</span>
-                                                </td>
-                                                <td className="product-quantity">
-                                                    <div className="product-details__quantity">
-                                                        <div className="quantity-box">
-                                                            <button type="button" className="sub">
-                                                                <i className="fa fa-minus"></i>
-                                                            </button>
-                                                            <input type="number" id="1" defaultValue="1" />
-                                                            <button type="button" className="add">
-                                                                <i className="fa fa-plus"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="product-subtotal">
-                                                    <span className="amount">$36.00</span>
-                                                </td>
-                                            </tr>
-                                            <tr className="cart_item">
-                                                <td className="product-remove">
-                                                    <a title="Remove this item" className="remove" href="#">
-                                                        ×
-                                                    </a>
-                                                </td>
-                                                <td className="product-thumbnail">
-                                                    <a href="#">
-                                                        <img alt="product" src="/images/resource/products/2.jpg" />
-                                                    </a>
-                                                </td>
-                                                <td className="product-name">
-                                                    <a href="shop-product-details.html">Swan Crop V-Neck Tee</a>
-                                                    <ul className="variation">
-                                                        <li className="variation-size">
-                                                            Size: <span>Small</span>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                                <td className="product-price">
-                                                    <span className="amount">$115.00</span>
-                                                </td>
-                                                <td className="product-quantity">
-                                                    <div className="product-details__quantity">
-                                                        <div className="quantity-box">
-                                                            <button type="button" className="sub">
-                                                                <i className="fa fa-minus"></i>
-                                                            </button>
-                                                            <input type="number" id="1" defaultValue="1" />
-                                                            <button type="button" className="add">
-                                                                <i className="fa fa-plus"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="product-subtotal">
-                                                    <span className="amount">$115.00</span>
-                                                </td>
-                                            </tr>
-                                            <tr className="cart_item">
-                                                <td className="product-remove">
-                                                    <a title="Remove this item" className="remove" href="#">
-                                                        ×
-                                                    </a>
-                                                </td>
-                                                <td className="product-thumbnail">
-                                                    <a href="#">
-                                                        <img alt="product" src="/images/resource/products/3.jpg" />
-                                                    </a>
-                                                </td>
-                                                <td className="product-name">
-                                                    <a href="shop-product-details.html">Blue Solid Casual Shirt</a>
-                                                    <ul className="variation">
-                                                        <li className="variation-size">
-                                                            Size: <span>Large</span>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                                <td className="product-price">
-                                                    <span className="amount">$68.00</span>
-                                                </td>
-                                                <td className="product-quantity">
-                                                    <div className="product-details__quantity">
-                                                        <div className="quantity-box">
-                                                            <button type="button" className="sub">
-                                                                <i className="fa fa-minus"></i>
-                                                            </button>
-                                                            <input type="number" id="1" defaultValue="1" />
-                                                            <button type="button" className="add">
-                                                                <i className="fa fa-plus"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td className="product-subtotal">
-                                                    <span className="amount">$68.00</span>
-                                                </td>
-                                            </tr>
-                                            <tr className="cart_item">
-                                                <td colSpan={3}>
-                                                    <form className="row g-3 coupon-form">
-                                                        <div className="col-auto">
-                                                            <input
-                                                                type="text"
-                                                                name="coupon_code"
-                                                                className="input-text form-control mr-1"
-                                                                id="coupon_code"
-                                                                defaultValue=""
-                                                                placeholder="Coupon code"
-                                                            />
-                                                        </div>
-                                                        <div className="col-auto">
+                            {cartItems.length ? (
+                                <div className="col-md-12">
+                                    <div className="table-responsive">
+                                        <table className="table table-striped table-bordered tbl-shopping-cart">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Photo</th>
+                                                    <th>Product Name</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {cartItems.map((cartItem: CartItem, id: number) => (
+                                                    <tr key={id} className="cart_item">
+                                                        <td className="product-remove">
                                                             <button
-                                                                type="submit"
-                                                                className="apply-button"
-                                                                name="apply_coupon"
-                                                                defaultValue="Apply Coupon"
+                                                                title="Remove this item"
+                                                                className="remove"
+                                                                onClick={() => handleRemoveItem(cartItem.productId)}
                                                             >
-                                                                <span className="btn-title">Apply Coupon</span>
+                                                                ×
                                                             </button>
-                                                        </div>
-                                                    </form>
-                                                </td>
-                                                <td colSpan={2}>&nbsp;</td>
-                                                <td>
-                                                    <button type="button" className="theme-btn btn-style-one">
-                                                        <span className="btn-title">Update Cart</span>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                        </td>
+                                                        <td className="product-thumbnail">
+                                                            <a href="#">
+                                                                {cartItem.productImage && (
+                                                                    <img
+                                                                        alt={cartItem.productName}
+                                                                        src={cartItem.productImage}
+                                                                    />
+                                                                )}
+                                                            </a>
+                                                        </td>
+                                                        <td className="product-name">
+                                                            <a href="shop-product-details.html">
+                                                                {cartItem.productName}
+                                                            </a>
+                                                            {/* <ul className="variation">
+                                                            <li className="variation-size">
+                                                                Size: <span>Medium</span>
+                                                            </li>
+                                                        </ul> */}
+                                                        </td>
+                                                        <td className="product-price">
+                                                            <span className="amount">{cartItem.unitPrice}</span>
+                                                        </td>
+                                                        <td className="product-quantity">
+                                                            <div className="product-details__quantity">
+                                                                <div className="quantity-box">
+                                                                    <button
+                                                                        type="button"
+                                                                        className="sub"
+                                                                        onClick={() =>
+                                                                            incrementQuantity(
+                                                                                cartItem.productId,
+                                                                                cartItem.quantity - 1
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        <i className="fa fa-minus"></i>
+                                                                    </button>
+                                                                    <input
+                                                                        type="number"
+                                                                        id="1"
+                                                                        value={cartItem.quantity}
+                                                                        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                                                            incrementQuantity(
+                                                                                cartItem.productId,
+                                                                                cartItem.quantity - 1
+                                                                            )
+                                                                        }
+                                                                    />
+                                                                    <button
+                                                                        type="button"
+                                                                        className="add"
+                                                                        onClick={() =>
+                                                                            incrementQuantity(
+                                                                                cartItem.productId,
+                                                                                cartItem.quantity + 1
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        <i className="fa fa-plus"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td className="product-subtotal">
+                                                            <span className="amount">
+                                                                {cartItem.unitPrice * cartItem.quantity}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
+                            ) : (
+                                <div className="alert alert-primary" role="alert">
+                                    Cart is Empty! <RouterLink href="/products">Click here to add shop</RouterLink>
+                                </div>
+                            )}
+
                             <div className="col-md-12 mt-30">
                                 <div className="row">
                                     <div className="col-md-5">

@@ -1,6 +1,6 @@
 type Props = {}
 
-export default function ShopCHeckOutPage({}: Props) {
+export default function ShopCheckOutPage({}: Props) {
     return (
         <>
             {/* <!-- Start main-content --> */}

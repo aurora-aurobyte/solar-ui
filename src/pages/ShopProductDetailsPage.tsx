@@ -1,6 +1,10 @@
 import Loader from "components/common/Loader"
 import { FormEvent, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { addCartItem } from "store/features/cartSlice"
+import { useAppDispatch } from "store/store"
+import Button from "react-bootstrap/Button"
+import Modal from "react-bootstrap/Modal"
 
 type Product = {
     id: string
@@ -81,19 +85,43 @@ const products: Product[] = [
 
 export default function ShopProductDetailsPage({}: Props) {
     const { productId } = useParams()
+    const dispatch = useAppDispatch()
 
     const [product, setProduct] = useState<Product>()
     const [loading, setLoading] = useState<boolean>(true)
     const [quantity, setQuantity] = useState<number>(1)
+    const [showModal, setShowModal] = useState<boolean>(false)
 
     const handleQuantityChange = (e: FormEvent<HTMLInputElement>) => {
         const newValue = e.currentTarget.value
-        setQuantity(parseInt(newValue) || 0)
+        setQuantity(parseInt(newValue) || 1)
     }
 
     const incrementQuantity = (increment: number) => {
         const incremented = quantity + increment
-        setQuantity(incremented < 0 ? 0 : incremented)
+        setQuantity(incremented < 1 ? 1 : incremented)
+    }
+
+    const handleAddToCart = () => {
+        if (!product) return
+        dispatch(
+            addCartItem({
+                productId: product.id,
+                unitPrice: product.price,
+                quantity: quantity,
+                productName: product.title,
+                productImage: product.image,
+            })
+        )
+        setShowModal(true)
+        setQuantity(0)
+        setTimeout(() => {
+            setShowModal(false)
+        }, 2000)
+    }
+
+    const handleClose = () => {
+        setShowModal(false)
     }
 
     useEffect(() => {
@@ -227,9 +255,9 @@ export default function ShopProductDetailsPage({}: Props) {
 
                             <div className="product-details__buttons">
                                 <div className="product-details__buttons-1">
-                                    <a href="shop-cart.html" className="theme-btn btn-style-one">
+                                    <button className="theme-btn btn-style-one" onClick={handleAddToCart}>
                                         <span className="btn-title">Add to Cart</span>
-                                    </a>
+                                    </button>
                                 </div>
                                 <div className="product-details__buttons-2">
                                     <a href="shop-product-details.html" className="theme-btn btn-style-one">
@@ -620,6 +648,18 @@ export default function ShopProductDetailsPage({}: Props) {
                     </div>
                 </div>
             </section>
+            <Modal show={showModal} onHide={handleClose}>
+                <Modal.Body className="text-center">
+                    <h5>Successfully added to cart</h5>
+                    <img src="/images/alerts/success.gif" alt="" />
+                </Modal.Body>
+
+                <Modal.Footer>
+                    <button className="theme-btn btn-style-one" onClick={handleClose}>
+                        Close
+                    </button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }
