@@ -85,6 +85,14 @@ table.tbl-shopping-cart .product-remove button, table.cart-total .product-remove
     font-family: var(--text-font);
 }
 
+.certified-logo .icon-box1-home2 {
+    max-width: 250px;
+}
+
+.certified-logo-heading {
+    color: var(--theme-color3);
+}
+
 @media (max-width: 991.98px) {
     .service-block.about {
         margin-bottom: 30px;

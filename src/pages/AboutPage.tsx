@@ -92,6 +92,27 @@ export default function AboutPage({}: Props) {
                     <div className="sec-title text-center wow fadeInUp">
                         <span className="sub-title">ACCESS ENERGY ENGINEERING</span>
                         <h2>Company Overview</h2>
+                        <h4 className="certified-logo-heading">Accredited by</h4>
+                        <div className="row my-5 certified-logo">
+                            <div className="col-md-4 d-flex justify-content-center wow fadeInUp">
+                                <div className="icon-box1-home2 mt-4 mt-sm-0">
+                                    <img src="images/about/sri-lanka.png" />
+                                    <h6 className="title">Ministry of People and Renewable Energy</h6>
+                                </div>
+                            </div>
+                            <div className="col-md-4 d-flex justify-content-center wow fadeInUp" data-wow-delay="200ms">
+                                <div className="icon-box1-home2 mt-4 mt-sm-0">
+                                    <img src="images/about/ceb.png" />
+                                    <h6 className="title">Ceylon Electricity Board</h6>
+                                </div>
+                            </div>
+                            <div className="col-md-4 d-flex justify-content-center wow fadeInUp" data-wow-delay="400ms">
+                                <div className="icon-box1-home2 mt-4 mt-sm-0">
+                                    <img src="images/about/sustainable-energy.png" />
+                                    <h6 className="title">Sri Lanka Sustainable Energy Authority</h6>
+                                </div>
+                            </div>
+                        </div>
                         <p className="blog-details__text-2">
                             Access Energy Engineering (Pvt) Ltd ( Reg No:- ) is a dynamic and innovative company that
                             serves the emerging renewable energy & eco building trade in Sri Lanka, a country
@@ -129,22 +150,9 @@ export default function AboutPage({}: Props) {
                                 </div>
                             </div>
                         </div>
+
                         {/* Service Block */}
                         <div className="service-block col-lg-4 col-sm-12 wow fadeInUp about" data-wow-delay="200ms">
-                            <div className="inner-box">
-                                <div className="content-box">
-                                    <i className="icon flaticon-graph-line-screen" />
-                                    <h4 className="title">GOALS</h4>
-                                    <div className="text">
-                                        Access Energy Engineering is committed to increase the renewable energy
-                                        capacities striving to meet a target of 100 megawatts to be a market leader
-                                        grid-connected solar PV roof top share of Srilanka.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Service Block */}
-                        <div className="service-block col-lg-4 col-sm-12 wow fadeInUp about" data-wow-delay="400ms">
                             <div className="inner-box">
                                 <div className="content-box">
                                     <i className="icon flaticon-idea" />
@@ -155,6 +163,20 @@ export default function AboutPage({}: Props) {
                                         Rooftop Solar (RTS) Company of Choice executing and operating our projects
                                         efficiently and maintaining the highest standards of quality, safety and
                                         environmental sustainability.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Service Block */}
+                        <div className="service-block col-lg-4 col-sm-12 wow fadeInUp about" data-wow-delay="400ms">
+                            <div className="inner-box">
+                                <div className="content-box">
+                                    <i className="icon flaticon-graph-line-screen" />
+                                    <h4 className="title">GOALS</h4>
+                                    <div className="text">
+                                        Access Energy Engineering is committed to increase the renewable energy
+                                        capacities striving to meet a target of 100 megawatts to be a market leader
+                                        grid-connected solar PV roof top share of Srilanka.
                                     </div>
                                 </div>
                             </div>
