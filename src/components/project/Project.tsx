@@ -4,7 +4,7 @@ export default function Project({}: Props) {
     return (
         <>
             {/* <!-- Project Section --> */}
-            <section className="project-section pull-up pb-0">
+            <section className="project-section pull-up">
                 <div className="large-container">
                     <div className="sec-title text-center">
                         <span className="sub-title">LASTEST PROJECT</span>

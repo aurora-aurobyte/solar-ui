@@ -22,7 +22,7 @@ export default function HomePage({}: Props) {
             <WhyChoose />
 
             <Project />
-            <Team />
+            {/* <Team /> */}
         </>
     )
 }
