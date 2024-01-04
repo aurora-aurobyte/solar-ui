@@ -2470,6 +2470,7 @@ Sticky Header
 }
 .sticky-header .logo img {
   max-height: 40px;
+  width: auto;
 }
 .sticky-header .nav-outer {
   position: relative;
