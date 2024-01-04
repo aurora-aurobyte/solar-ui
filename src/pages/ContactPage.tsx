@@ -65,7 +65,7 @@ export default function ContactPage({}: Props) {
                                                 name="form_subject"
                                                 className="form-control required"
                                                 type="text"
-                                                placeholder="Enter Subject"
+                                                placeholder="Enter Purpose"
                                             />
                                         </div>
                                     </div>
