@@ -21,6 +21,10 @@ const menus = [
         path: "/products",
     },
     {
+        name: "Projects",
+        path: "/projects",
+    },
+    {
         name: "News Feeds",
         path: "/news",
     },
