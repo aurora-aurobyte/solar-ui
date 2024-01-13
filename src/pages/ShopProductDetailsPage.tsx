@@ -65,7 +65,7 @@ const products: Product[] = [
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/407",
         additionalDescription: "AE Solar guarantees high-quality and best performance of photovoltaic modules using only superior raw materials and components from Tier 1 Grade A suppliers. AE Smart Hot-Spot Free Series with Power Range : 255W-350W (increasing efficiency up to 30%) available in mono- and polycrystalline Thanks to an innovative and patented technology AE Hot Spot Free Modules generate up to 30% more power with less sunlight in comparison to standard modules and have no fire risk caused by hot-spot cells.",
         features: [
             "Innovative and patented technology",
@@ -89,7 +89,7 @@ const products: Product[] = [
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/408",
         additionalDescription: "",
         features: [
             "Type – JAM72S20-450/MR",
@@ -118,7 +118,7 @@ SMA was the first manufacturer of solar inverters listed in the Prime Standard o
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/409",
         additionalDescription: `SMA Product Lines
 Sunny Boy – home and small commercial systems.
 Sunny Tripower – medium-sized plants through to multi-megawatt.
@@ -156,7 +156,7 @@ This SolaX X1 Boost 4.2kW inverter boasts a wide MPPT voltage range to allow for
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/410",
         additionalDescription: `Simple, Reliable, Efficient
 The SolaX X1 Boost is amongst some of the most efficient residential string solar inverters available on the market today, boasting a massive 97.8% efficiency and with a maximum DC voltage of 580V, you can ensure that you are making the most out of your solar energy.
 
@@ -194,7 +194,7 @@ It is important to understand that this is a hybrid solar PV inverter and batter
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/411",
         additionalDescription: `Add remote monitoring with the Solis Gen3 WiFi Dongle.
 
 Downloads
@@ -236,7 +236,7 @@ This tool allows residential customers to remotely monitor the performance of th
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/412",
         additionalDescription: `Highlights
 Wireless access to the embedded Web User Interface
 Easy commissioning with QR code access
@@ -272,7 +272,7 @@ UNO-DM-3.3/3.8/4.6/5.0TL-PLUS-US-Q Data sheet | Download`,
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/413",
         additionalDescription: "",
         features: [
             "2 MPP trackers, Max. efficiency up to 97.5%",
@@ -298,7 +298,7 @@ UNO-DM-3.3/3.8/4.6/5.0TL-PLUS-US-Q Data sheet | Download`,
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/414",
         additionalDescription: "",
         features: [
             "#1 Solar hot water system in the market",
@@ -326,7 +326,7 @@ UNO-DM-3.3/3.8/4.6/5.0TL-PLUS-US-Q Data sheet | Download`,
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/415",
         additionalDescription: `SMA Product Lines
             Sunny Boy – home and small commercial systems.
             Sunny Tripower – medium-sized plants through to multi-megawatt.
@@ -361,7 +361,7 @@ UNO-DM-3.3/3.8/4.6/5.0TL-PLUS-US-Q Data sheet | Download`,
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/416",
         additionalDescription: "",
         features: [
             "Brand	Phoenix Contact",
@@ -395,7 +395,7 @@ High energy MOVs equipped with specific thermal disconnectors and related failur
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/417",
         additionalDescription: "",
         features: [
             "Place of Origin: Zhejiang, China (Mainland)",
@@ -431,7 +431,7 @@ Environmental Friendly
         rating: 4,
         numOfRatings: 12,
         isAvailable: true,
-        ref: "4231/406",
+        ref: "4231/418",
         additionalDescription: `Wattage	
         50W, 100W, 150W
         
