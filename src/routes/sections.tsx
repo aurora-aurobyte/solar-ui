@@ -48,7 +48,10 @@ export default function Router() {
                 { path: "contact-us", element: <ContactPage /> },
                 {
                     path: "services",
-                    element: <ServicesPage />,
+                    children: [
+                        { element: <ServicesPage />, index: true },
+                        { path: ":serviceId", element: <ServiceDetailsPage /> }
+                    ]
                 },
                 {
                     path: "products",
@@ -59,7 +62,7 @@ export default function Router() {
                 },
                 {
                     path: "projects",
-                    element: <ProjectsPage />,
+                    element: <ProjectsPage />
                 },
                 {
                     path: "news",
