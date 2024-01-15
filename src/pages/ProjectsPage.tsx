@@ -1,5 +1,19 @@
 type Props = {}
 
+type Project = {
+    title: string;
+    subtitle: string;
+    imageHref: string;
+
+}
+
+const projects: Array<Project> = [
+    { title: "Maximizing Solar ROI", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-1.jpg" },
+    { title: "Diversifying Your Solar", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-2.jpg" },
+    { title: "The Benefits of Solar", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-3.jpg" },
+    { title: "Shining a Light", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-4.jpg" },
+];
+
 export default function ProjectsPage({}: Props) {
     return (
         <>
@@ -24,98 +38,33 @@ export default function ProjectsPage({}: Props) {
                 <div className="large-container">
                     {/* <!-- Prject Carousel --> */}
                     <div className="row wow fadeInUp">
-                        <div className="col-xl-3 col-sm-6">
-                            {/* <!-- Project Block --> */}
-                            <div className="project-block mb-30">
-                                <div className="inner-box">
-                                    <div className="image-box">
-                                        <figure className="image">
-                                            <a href="/images/resource/project-1.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-1.jpg" alt="" />
-                                            </a>
-                                        </figure>
-                                        <a href="page-project-details.html" className="icon">
-                                            <i className="fa fa-plus"></i>
-                                        </a>
-                                    </div>
-                                    <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
-                                        <h4 className="title">
-                                            <a href="page-project-details.html">Maximizing Solar ROI</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6">
-                            {/* <!-- Project Block --> */}
-                            <div className="project-block mb-30">
-                                <div className="inner-box">
-                                    <div className="image-box">
-                                        <figure className="image">
-                                            <a href="/images/resource/project-2.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-2.jpg" alt="" />
-                                            </a>
-                                        </figure>
-                                        <a href="page-project-details.html" className="icon">
-                                            <i className="fa fa-plus"></i>
-                                        </a>
-                                    </div>
-                                    <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
-                                        <h4 className="title">
-                                            <a href="page-project-details.html">Diversifying Your Solar</a>
-                                        </h4>
+                        {
+                            projects.map(project => {
+                                return <div className="col-xl-3 col-sm-6">
+                                    {/* <!-- Project Block --> */}
+                                    <div className="project-block mb-30">
+                                        <div className="inner-box">
+                                            <div className="image-box">
+                                                <figure className="image">
+                                                    <a href={project.imageHref} className="lightbox-image">
+                                                        <img src={project.imageHref} alt="" />
+                                                    </a>
+                                                </figure>
+                                                <a href="page-project-details.html" className="icon">
+                                                    <i className="fa fa-plus"></i>
+                                                </a>
+                                            </div>
+                                            <div className="content-box">
+                                                <span className="sub-title">{project.subtitle}</span>
+                                                <h4 className="title">
+                                                    <a href="page-project-details.html">{project.title}</a>
+                                                </h4>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6">
-                            {/* <!-- Project Block --> */}
-                            <div className="project-block mb-30">
-                                <div className="inner-box">
-                                    <div className="image-box">
-                                        <figure className="image">
-                                            <a href="/images/resource/project-3.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-3.jpg" alt="" />
-                                            </a>
-                                        </figure>
-                                        <a href="page-project-details.html" className="icon">
-                                            <i className="fa fa-plus"></i>
-                                        </a>
-                                    </div>
-                                    <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
-                                        <h4 className="title">
-                                            <a href="page-project-details.html">The Benefits of Solar</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-sm-6">
-                            {/* <!-- Project Block --> */}
-                            <div className="project-block mb-30">
-                                <div className="inner-box">
-                                    <div className="image-box">
-                                        <figure className="image">
-                                            <a href="/images/resource/project-4.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-4.jpg" alt="" />
-                                            </a>
-                                        </figure>
-                                        <a href="page-project-details.html" className="icon">
-                                            <i className="fa fa-plus"></i>
-                                        </a>
-                                    </div>
-                                    <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
-                                        <h4 className="title">
-                                            <a href="page-project-details.html">Shining a Light</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            })
+                        }
                     </div>
                 </div>
             </section>
