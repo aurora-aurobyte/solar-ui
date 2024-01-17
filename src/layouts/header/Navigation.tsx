@@ -24,10 +24,10 @@ const menus = [
         name: "Projects",
         path: "/projects",
     },
-    {
-        name: "News Feeds",
-        path: "/news",
-    },
+    // {
+    //     name: "News Feeds",
+    //     path: "/news",
+    // },
     {
         name: "Contact",
         path: "/contact-us",

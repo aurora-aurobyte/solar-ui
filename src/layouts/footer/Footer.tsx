@@ -1,3 +1,6 @@
+import { FormEvent } from "react"
+import { RouterLink } from "routes/components"
+
 interface Props {}
 
 const contact = {
@@ -18,6 +21,17 @@ const contact = {
 }
 
 export default function Footer(props: Props) {
+    const handleFormSubmit = (event: FormEvent<HTMLFormElement>): void => {
+        event.preventDefault()
+        const data = new FormData(event.target as HTMLFormElement)
+        const message = data.get("message") as string
+        const url = `https://wa.me/94771886719?text=${encodeURI(message)}`
+        const a = document.createElement("a")
+        a.style.display = "none"
+        a.href = url
+        document.body.appendChild(a)
+        a.click()
+    }
     return (
         <>
             {/* <!-- Main Footer --> */}
@@ -49,9 +63,13 @@ export default function Footer(props: Props) {
                                     </div>
                                     <h4 className="title">Contact</h4>
                                     <div className="text">
-                                        <a href="mailto:needhelp@company.com">{contact.email}</a>
-                                        <a href="tel:+92(8800)48720">{contact.number}</a>
-                                        <a href="tel:+92(8800)48720">{contact.pNumber}</a>
+                                        <a style={{ fontSize: "small" }} href={"mailto:" + contact.email}>
+                                            {contact.email}
+                                        </a>
+                                        <br />
+                                        <a href={"tel:" + contact.number}>{contact.number}</a>
+                                        <br />
+                                        <a href={"tel:" + contact.pNumber}>{contact.pNumber}</a>
                                     </div>
                                 </div>
                             </div>
@@ -89,9 +107,9 @@ export default function Footer(props: Props) {
                                         We work with a passion of taking challenges and creating new ones in advertising
                                         sector.
                                     </div>
-                                    <a href="page-about.html" className="theme-btn btn-style-one hvr-light small">
+                                    <RouterLink href="/about" className="theme-btn btn-style-one hvr-light small">
                                         <span className="btn-title">About</span>
-                                    </a>
+                                    </RouterLink>
                                 </div>
                             </div>
 
@@ -158,23 +176,23 @@ export default function Footer(props: Props) {
                             {/* <!--Footer Column--> */}
                             <div className="footer-column col-xl-4 col-lg-4 col-md-4 col-sm-8">
                                 <div className="footer-widget">
-                                    <h3 className="widget-title">Newsletter</h3>
+                                    <h3 className="widget-title">Subscribe</h3>
                                     <div className="widget-content">
                                         <div className="subscribe-form">
                                             <div className="text">
                                                 Subscribe our newsletter to get our latest update & news
                                             </div>
-                                            <form method="post" action="#">
+                                            <form method="post" action="#" onSubmit={handleFormSubmit}>
                                                 <div className="form-group">
                                                     <input
-                                                        type="email"
-                                                        name="email"
-                                                        className="email"
+                                                        type="text"
+                                                        name="message"
+                                                        className="message"
                                                         defaultValue=""
-                                                        placeholder="Email Address"
+                                                        placeholder="Your Message"
                                                         required
                                                     />
-                                                    <button type="button" className="theme-btn btn-style-one">
+                                                    <button type="submit" className="theme-btn btn-style-one">
                                                         <span className="btn-title">
                                                             <i className="fa fa-paper-plane"></i>
                                                         </span>

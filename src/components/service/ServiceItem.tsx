@@ -19,19 +19,23 @@ const ServiceItem = ({ service }: Props) => {
             {/* <!-- Service Block Two --> */}
             <div className="service-block-home2 wow fadeInUp">
                 <figure className="image">
-                    <RouterLink href={navigateTo}>
+                    <span>
                         <img src={service.image} alt={service.title} />
-                    </RouterLink>
+                    </span>
+                    {/* <RouterLink href={navigateTo}>
+                        <img src={service.image} alt={service.title} />
+                    </RouterLink> */}
                 </figure>
                 <div className="inner-box ">
                     <i className={"icon " + service.icon}></i>
                     <h4 className="title mt-0">
-                        <a href="page-service-details.html">{service.title}</a>
+                        <span className="link">{service.title}</span>
                     </h4>
                     <div className="text">{service.description}</div>
-                    <RouterLink href={navigateTo} className="read-more">
+                    <span className="read-more">Read More</span>
+                    {/* <RouterLink href={navigateTo} className="read-more">
                         Read More
-                    </RouterLink>
+                    </RouterLink> */}
                 </div>
             </div>
         </div>

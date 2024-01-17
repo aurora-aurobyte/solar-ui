@@ -1,10 +1,9 @@
 type Props = {}
 
 type Project = {
-    title: string;
-    subtitle: string;
-    imageHref: string;
-
+    title: string
+    subtitle: string
+    imageHref: string
 }
 
 const projects: Array<Project> = [
@@ -16,7 +15,7 @@ const projects: Array<Project> = [
     { title: "", subtitle: "", imageHref: "/images/resource/projects/sillalai5kw.jpg" },
     { title: "", subtitle: "", imageHref: "/images/resource/projects/valvettithurai5kw.jpg" },
     { title: "", subtitle: "", imageHref: "/images/resource/projects/karaveddy.jpg" },
-];
+]
 
 export default function ProjectsPage({}: Props) {
     return (
@@ -42,9 +41,9 @@ export default function ProjectsPage({}: Props) {
                 <div className="large-container">
                     {/* <!-- Prject Carousel --> */}
                     <div className="row wow fadeInUp">
-                        {
-                            projects.map(project => {
-                                return <div className="col-xl-3 col-sm-6">
+                        {projects.map((project: Project, id: number) => {
+                            return (
+                                <div className="col-xl-3 col-sm-6" key={id}>
                                     {/* <!-- Project Block --> */}
                                     <div className="project-block mb-30">
                                         <div className="inner-box">
@@ -67,8 +66,8 @@ export default function ProjectsPage({}: Props) {
                                         </div>
                                     </div>
                                 </div>
-                            })
-                        }
+                            )
+                        })}
                     </div>
                 </div>
             </section>

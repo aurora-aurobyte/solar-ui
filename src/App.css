@@ -102,6 +102,19 @@ table.tbl-shopping-cart .product-remove button, table.cart-total .product-remove
     height: auto !important;
 }
 
+a.btn-style-one:focus {
+    color: #ffffff
+}
+
+span.link {
+    color: var(--theme-color3);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+span.link:hover {
+    color: var(--theme-color1);
+}
+
 @media (max-width: 991.98px) {
     .service-block.about {
         margin-bottom: 30px;
