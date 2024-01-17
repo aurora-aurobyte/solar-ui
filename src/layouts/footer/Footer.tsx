@@ -201,11 +201,12 @@ export default function Footer(props: Props) {
 
                             <ul className="social-icon-two">
                                 <li>
-                                    <a href="#">
+                                    {/* open */}
+                                    <a href="https://www.facebook.com/accessenergy.lk?mibextid=ZbWKwL" target="_blank">
                                         <i className="fab fa-facebook"></i>
                                     </a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a href="#">
                                         <i className="fab fa-twitter"></i>
                                     </a>
@@ -219,7 +220,7 @@ export default function Footer(props: Props) {
                                     <a href="#">
                                         <i className="fab fa-instagram"></i>
                                     </a>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
