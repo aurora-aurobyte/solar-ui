@@ -29,7 +29,7 @@ const products: Product[] = [
         id: "2",
         title: "AE Solar Panel",
         categoryId: "1",
-        image: "/images/resource/products/solar-2.webp",
+        image: "/images/resource/products/ae-panel.png",
         price: 0,
     },
     {
