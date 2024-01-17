@@ -5,17 +5,15 @@ type WhyChoose = {
 
 type Props = {}
 
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from "react"
 
 interface FormData {
-  full_name: string;
-  address: string;
-  usage: string;
-  email: string;
-  phone: string;
+    fullName: string
+    address: string
+    usage: string
+    email: string
+    phone: string
 }
-
-
 
 const whyChoose: WhyChoose[] = [
     {
@@ -48,26 +46,37 @@ const whyChoose: WhyChoose[] = [
 
 export default function WhyChoose({}: Props) {
     const [formData, setFormData] = useState<FormData>({
-        full_name: '',
-        address: '',
-        usage: '',
-        email: '',
-        phone: '',
-      });
-    
-      const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
+        fullName: "",
+        address: "",
+        usage: "",
+        email: "",
+        phone: "",
+    })
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target
         setFormData((prevData) => ({
-          ...prevData,
-          [name]: value,
-        }));
-      };
-    
-      const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        // console.log('Form Data:', formData);
-        // You can send the form data to the server or perform other actions here
-      };
+            ...prevData,
+            [name]: value,
+        }))
+    }
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault()
+        const message =
+            `Full Name: ${formData.fullName}\n` +
+            `Address: ${formData.address}\n` +
+            `Usage: ${formData.usage}\n` +
+            `Email: ${formData.email}\n` +
+            `Phone: ${formData.phone}`
+        const url = `https://wa.me/94771886719?text=${encodeURI(message)}`
+        const a = document.createElement("a")
+        a.target = "_blank"
+        a.style.display = "none"
+        a.href = url
+        document.body.appendChild(a)
+        a.click()
+    }
     return (
         <>
             {/* <!-- Why Choose Us --> */}
@@ -116,9 +125,9 @@ export default function WhyChoose({}: Props) {
                                                 <input
                                                     className="form-control"
                                                     type="text"
-                                                    name="full_name"
+                                                    name="fullName"
                                                     placeholder="Your Name"
-                                                    value={formData.full_name}
+                                                    value={formData.fullName}
                                                     onChange={handleChange}
                                                     required
                                                 />
@@ -149,7 +158,7 @@ export default function WhyChoose({}: Props) {
                                                 <input
                                                     className="form-control"
                                                     type="text"
-                                                    name="Email"
+                                                    name="email"
                                                     placeholder="Your Email"
                                                     value={formData.email}
                                                     onChange={handleChange}
@@ -160,7 +169,7 @@ export default function WhyChoose({}: Props) {
                                                 <input
                                                     className="form-control"
                                                     type="text"
-                                                    name="Phone"
+                                                    name="phone"
                                                     placeholder="Phone No"
                                                     value={formData.phone}
                                                     onChange={handleChange}

@@ -27,6 +27,7 @@ export default function Footer(props: Props) {
         const message = data.get("message") as string
         const url = `https://wa.me/94771886719?text=${encodeURI(message)}`
         const a = document.createElement("a")
+        a.target = "_blank"
         a.style.display = "none"
         a.href = url
         document.body.appendChild(a)

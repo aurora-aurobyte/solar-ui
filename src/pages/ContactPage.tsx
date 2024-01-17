@@ -1,6 +1,48 @@
+import { ChangeEvent, FormEvent, useState } from "react"
+
 type Props = {}
 
+const defaultValues = {
+    name: "",
+    email: "",
+    purpose: "",
+    phone: "",
+    message: "",
+}
+
 export default function ContactPage({}: Props) {
+    const [values, setValues] = useState(defaultValues)
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target
+        setValues((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }))
+    }
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault()
+
+        const message =
+            `Name: ${values.name}\n` +
+            `Email: ${values.email}\n` +
+            `Purpose: ${values.purpose}\n` +
+            `Phone: ${values.phone}\n` +
+            `Message: ${values.message}`
+        const url = `https://wa.me/94771886719?text=${encodeURI(message)}`
+        const a = document.createElement("a")
+        a.target = "_blank"
+        a.style.display = "none"
+        a.href = url
+        document.body.appendChild(a)
+        a.click()
+    }
+
+    const handleClearClick = () => {
+        setValues(defaultValues)
+    }
+
     return (
         <>
             {/* <!-- Start main-content --> */}
@@ -29,31 +71,29 @@ export default function ContactPage({}: Props) {
                                 <h2>Feel free to write</h2>
                             </div>
                             {/* <!-- Contact Form --> */}
-                            <form
-                                id="contact_form"
-                                name="contact_form"
-                                className=""
-                                action="includes/sendmail.php"
-                                method="post"
-                            >
+                            <form id="contact_form" name="contact_form" className="" onSubmit={handleSubmit}>
                                 <div className="row">
                                     <div className="col-sm-6">
                                         <div className="mb-3">
                                             <input
-                                                name="form_name"
+                                                name="name"
                                                 className="form-control"
                                                 type="text"
                                                 placeholder="Enter Name"
+                                                value={values.name}
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="mb-3">
                                             <input
-                                                name="form_email"
+                                                name="email"
                                                 className="form-control required email"
                                                 type="email"
                                                 placeholder="Enter Email"
+                                                value={values.email}
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
@@ -62,49 +102,57 @@ export default function ContactPage({}: Props) {
                                     <div className="col-sm-6">
                                         <div className="mb-3">
                                             <input
-                                                name="form_subject"
+                                                name="purpose"
                                                 className="form-control required"
                                                 type="text"
                                                 placeholder="Enter Purpose"
+                                                value={values.purpose}
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
                                     <div className="col-sm-6">
                                         <div className="mb-3">
                                             <input
-                                                name="form_phone"
+                                                name="phone"
                                                 className="form-control"
-                                                type="text"
+                                                type="phone"
                                                 placeholder="Enter Phone"
+                                                value={values.phone}
+                                                onChange={handleChange}
                                             />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="mb-3">
                                     <textarea
-                                        name="form_message"
+                                        name="message"
                                         className="form-control required"
                                         rows={7}
                                         placeholder="Enter Message"
+                                        value={values.message}
+                                        onChange={handleChange}
                                     ></textarea>
                                 </div>
-                                <div className="mb-5">
-                                    <input
-                                        name="form_botcheck"
-                                        className="form-control"
-                                        type="hidden"
-                                        defaultValue=""
-                                    />
-                                    <button
-                                        type="submit"
-                                        className="theme-btn btn-style-one mb-3 mb-sm-0"
-                                        data-loading-text="Please wait..."
-                                    >
-                                        <span className="btn-title">Send message</span>
-                                    </button>
-                                    <button type="reset" className="theme-btn btn-style-one bg-theme-color5">
-                                        <span className="btn-title">Reset</span>
-                                    </button>
+                                <div className="mb-5 row">
+                                    <div className="col">
+                                        <button
+                                            type="submit"
+                                            className="theme-btn btn-style-one mb-3 mb-sm-0"
+                                            data-loading-text="Please wait..."
+                                        >
+                                            <span className="btn-title">Send message</span>
+                                        </button>
+                                    </div>
+                                    <div className="col">
+                                        <button
+                                            type="reset"
+                                            className="theme-btn btn-style-one bg-theme-color5"
+                                            onClick={handleClearClick}
+                                        >
+                                            <span className="btn-title">Reset</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                             {/* <!-- Contact Form Validation--> */}

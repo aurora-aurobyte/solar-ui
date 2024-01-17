@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { FormEvent, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { RouterLink, RouterNavLink } from "routes/components"
 import Navigation from "./Navigation"
@@ -8,6 +8,10 @@ type Props = {}
 
 export default function Header({}: Props) {
     const cartItems = useAppSelector((state) => state.cart.cartItems)
+
+    const handleFormSubmit = (event: FormEvent<HTMLFormElement>): void => {
+        event.preventDefault()
+    }
 
     useEffect(() => {
         //Update Header Style and Scroll to Top
@@ -207,7 +211,7 @@ export default function Header({}: Props) {
                             <div className="contact-info-box">
                                 <i className="icon lnr-icon-phone-handset"></i>
                                 <span className="title">Call Now</span>
-                                <a href="tel:+92880098670">+94 77 120 8700</a>
+                                <a href="tel:+94 77 120 8700">+94 77 120 8700</a>
                             </div>
                         </li>
                         <li>
@@ -215,7 +219,7 @@ export default function Header({}: Props) {
                             <div className="contact-info-box">
                                 <span className="icon lnr-icon-envelope1"></span>
                                 <span className="title">Send Email</span>
-                                <a href="mailto:help@company.com">accessenergyeng@gmail.com</a>
+                                <a href="mailto:accessenergyeng@gmail.com">accessenergyeng@gmail.com</a>
                             </div>
                         </li>
                         <li>
@@ -262,7 +266,7 @@ export default function Header({}: Props) {
                 </button>
 
                 <div className="search-inner">
-                    <form method="post" action="index.html">
+                    <form method="post" action="index.html" onSubmit={handleFormSubmit}>
                         <div className="form-group">
                             <input type="search" name="search-field" defaultValue="" placeholder="Search..." required />
                             <button type="submit">
