@@ -92,6 +92,24 @@ export default function WhyChoose({}: Props) {
                                                 <input
                                                     className="form-control"
                                                     type="text"
+                                                    name="address"
+                                                    placeholder="Your Address"
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="col-lg-12 form-group">
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
+                                                    name="usage"
+                                                    placeholder="Monthly Usage/ Expected in unit (124 unit)"
+                                                    required
+                                                />
+                                            </div>
+                                            <div className="col-lg-12 form-group">
+                                                <input
+                                                    className="form-control"
+                                                    type="text"
                                                     name="Email"
                                                     placeholder="Your Email"
                                                     required
@@ -106,14 +124,14 @@ export default function WhyChoose({}: Props) {
                                                     required
                                                 />
                                             </div>
-                                            <div className="col-lg-12 form-group">
+                                            {/* <div className="col-lg-12 form-group">
                                                 <textarea
                                                     name="form_message"
                                                     className="form-control required"
                                                     rows={6}
                                                     placeholder="Enter Message"
                                                 ></textarea>
-                                            </div>
+                                            </div> */}
                                             <div className="col-lg-12 col-md-12 col-sm-12 form-group">
                                                 <button
                                                     className="theme-btn btn-style-three"

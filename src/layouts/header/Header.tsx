@@ -98,11 +98,11 @@ export default function Header({}: Props) {
                 <div className="top-right">
                     <ul className="social-icon-one">
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/accessenergy.lk?mibextid=ZbWKwL" target="_blank">
                                 <span className="fab fa-facebook-square"></span>
                             </a>
                         </li>
-                        <li>
+                        {/* <li>
                             <a href="#">
                                 <span className="fab fa-twitter"></span>
                             </a>
@@ -116,7 +116,7 @@ export default function Header({}: Props) {
                             <a href="#">
                                 <span className="fab fa-instagram"></span>
                             </a>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
@@ -229,17 +229,17 @@ export default function Header({}: Props) {
                     </ul>
 
                     <ul className="social-links">
-                        <li>
+                        {/* <li>
                             <a href="#">
                                 <i className="fab fa-twitter"></i>
                             </a>
-                        </li>
+                        </li> */}
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/accessenergy.lk?mibextid=ZbWKwL" target="_blank">
                                 <i className="fab fa-facebook-f"></i>
                             </a>
                         </li>
-                        <li>
+                        {/* <li>
                             <a href="#">
                                 <i className="fab fa-pinterest"></i>
                             </a>
@@ -248,7 +248,7 @@ export default function Header({}: Props) {
                             <a href="#">
                                 <i className="fab fa-instagram"></i>
                             </a>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             </div>

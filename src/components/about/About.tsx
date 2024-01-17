@@ -24,8 +24,8 @@ export default function About({}: Props) {
                                         present and future human life.
                                     </div>
                                     <h4>
-                                        We have 8+ years of experience in power supply and renewable energy solutions in
-                                        Sri Lanka.
+                                        We have 12+ years of experience in power supply and renewable energy solutions
+                                        in Sri Lanka.
                                     </h4>
                                 </div>
                                 <div className="company-cell mb-30 d-sm-flex align-items-center position-relative">
@@ -35,7 +35,7 @@ export default function About({}: Props) {
                                     <div>
                                         <h5 className="title my-0">Have any question? Give us a call</h5>
                                         <a className="subtitle" href="tel:+92 666 888 0000">
-                                            +94 212223829
+                                            +94 21 222 3829
                                         </a>
                                     </div>
                                 </div>
@@ -46,7 +46,11 @@ export default function About({}: Props) {
                                     <div>
                                         <h5 className="title my-0">Have any question? Give us a call</h5>
                                         <a className="subtitle" href="tel:+92 666 888 0000">
-                                            +94 771208700
+                                            +94 77 120 8700
+                                        </a>
+                                        <br />
+                                        <a className="subtitle" href="tel:+92 666 888 0000">
+                                            +94 77 752 8940
                                         </a>
                                     </div>
                                 </div>
