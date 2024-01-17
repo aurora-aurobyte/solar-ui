@@ -32,7 +32,7 @@ export default function Service({}: Props) {
                                 <div className="image-box">
                                     <figure className="image">
                                         <a href="page-service-details.html">
-                                            <img src="/images/resource/service-1.jpg" alt="" />
+                                            <img src="/images/resource/on-grid.jpg" alt="" />
                                         </a>
                                     </figure>
                                 </div>
@@ -60,7 +60,7 @@ export default function Service({}: Props) {
                                 <div className="image-box">
                                     <figure className="image">
                                         <a href="page-service-details.html">
-                                            <img src="/images/resource/service-2.jpg" alt="" />
+                                            <img src="/images/resource/off-grid.jpg" alt="" />
                                         </a>
                                     </figure>
                                 </div>
@@ -87,7 +87,7 @@ export default function Service({}: Props) {
                                 <div className="image-box">
                                     <figure className="image">
                                         <a href="page-service-details.html">
-                                            <img src="/images/resource/service-3.jpg" alt="" />
+                                            <img src="/images/resource/hybrid.png" alt="" />
                                         </a>
                                     </figure>
                                 </div>
