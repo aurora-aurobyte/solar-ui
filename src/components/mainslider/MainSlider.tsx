@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { RouterLink } from "routes/components"
+import LogoSection from "./LogoSection"
 
 type Props = {}
 
@@ -91,6 +92,8 @@ export default function MainSlider({}: Props) {
                                         <span className="btn-title">Discover More</span>
                                     </RouterLink>
                                 </div>
+
+                                <LogoSection />
                             </li>
 
                             {/* <!-- Slide 2 --> */}
@@ -166,10 +169,11 @@ export default function MainSlider({}: Props) {
                                         <span className="btn-title">Explore More</span>
                                     </RouterLink>
                                 </div>
+                                <LogoSection />
                             </li>
 
                             {/* <!-- Slide 3 --> */}
-                            <li data-index="rs-2" data-transition="zoomout">
+                            <li data-index="rs-3" data-transition="zoomout">
                                 {/* <!-- MAIN IMAGE --> */}
                                 <img src="/images/main-slider/4.png" alt="" className="rev-slidebg" />
                                 <div
@@ -191,8 +195,8 @@ export default function MainSlider({}: Props) {
                                     data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                                 >
                                     <h2>
-                                        Energize Society <br />
-                                        Reliable Energy
+                                        Jinko Tiger <br />
+                                        Pro Series
                                     </h2>
                                 </div>
                                 <div
@@ -214,8 +218,7 @@ export default function MainSlider({}: Props) {
                                     data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                                 >
                                     <span className="title">
-                                        Ecology Limited are a fully independent, specialist ecological consultancy,
-                                        working across the Sri Lanka
+                                        Next Generation Solar Module. Build your trust in Solar with Jinko Solar
                                     </span>
                                 </div>
 
@@ -237,10 +240,11 @@ export default function MainSlider({}: Props) {
                                     data-textalign="['top','top','top','top']"
                                     data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                                 >
-                                    <RouterLink href="/news" className="theme-btn btn-style-one hvr-light">
-                                        <span className="btn-title">Explore More</span>
+                                    <RouterLink href="/products" className="theme-btn btn-style-one hvr-light">
+                                        <span className="btn-title">Buy Now</span>
                                     </RouterLink>
                                 </div>
+                                <LogoSection />
                             </li>
                         </ul>
                     </div>

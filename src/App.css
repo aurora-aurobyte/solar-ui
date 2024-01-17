@@ -93,6 +93,15 @@ table.tbl-shopping-cart .product-remove button, table.cart-total .product-remove
     color: var(--theme-color3);
 }
 
+.slider-logo .cont {
+    max-width: 150px;
+}
+
+.slider-logo img {
+    width: 100% !important;
+    height: auto !important;
+}
+
 @media (max-width: 991.98px) {
     .service-block.about {
         margin-bottom: 30px;
