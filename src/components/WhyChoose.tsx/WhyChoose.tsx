@@ -5,6 +5,18 @@ type WhyChoose = {
 
 type Props = {}
 
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+
+interface FormData {
+  full_name: string;
+  address: string;
+  usage: string;
+  email: string;
+  phone: string;
+}
+
+
+
 const whyChoose: WhyChoose[] = [
     {
         title: "TOP QUALITY FOR LOWEST PRICE",
@@ -35,6 +47,27 @@ const whyChoose: WhyChoose[] = [
 ]
 
 export default function WhyChoose({}: Props) {
+    const [formData, setFormData] = useState<FormData>({
+        full_name: '',
+        address: '',
+        usage: '',
+        email: '',
+        phone: '',
+      });
+    
+      const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      };
+    
+      const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        // console.log('Form Data:', formData);
+        // You can send the form data to the server or perform other actions here
+      };
     return (
         <>
             {/* <!-- Why Choose Us --> */}
@@ -77,7 +110,7 @@ export default function WhyChoose({}: Props) {
                                 {/* <!-- Contact Form --> */}
                                 <div className="contact-form wow fadeInLeft">
                                     {/* <!--Contact Form--> */}
-                                    <form method="post" action="get" id="contact-form">
+                                    <form method="post" action="get" onSubmit={handleSubmit}>
                                         <div className="row">
                                             <div className="col-lg-12 form-group">
                                                 <input
@@ -85,6 +118,8 @@ export default function WhyChoose({}: Props) {
                                                     type="text"
                                                     name="full_name"
                                                     placeholder="Your Name"
+                                                    value={formData.full_name}
+                                                    onChange={handleChange}
                                                     required
                                                 />
                                             </div>
@@ -94,6 +129,8 @@ export default function WhyChoose({}: Props) {
                                                     type="text"
                                                     name="address"
                                                     placeholder="Your Address"
+                                                    value={formData.address}
+                                                    onChange={handleChange}
                                                     required
                                                 />
                                             </div>
@@ -103,6 +140,8 @@ export default function WhyChoose({}: Props) {
                                                     type="text"
                                                     name="usage"
                                                     placeholder="Monthly Usage/ Expected in unit (124 unit)"
+                                                    value={formData.usage}
+                                                    onChange={handleChange}
                                                     required
                                                 />
                                             </div>
@@ -112,6 +151,8 @@ export default function WhyChoose({}: Props) {
                                                     type="text"
                                                     name="Email"
                                                     placeholder="Your Email"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
                                                     required
                                                 />
                                             </div>
@@ -121,6 +162,8 @@ export default function WhyChoose({}: Props) {
                                                     type="text"
                                                     name="Phone"
                                                     placeholder="Phone No"
+                                                    value={formData.phone}
+                                                    onChange={handleChange}
                                                     required
                                                 />
                                             </div>
