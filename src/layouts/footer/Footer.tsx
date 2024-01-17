@@ -195,14 +195,21 @@ export default function Footer(props: Props) {
                         <div className="inner-container">
                             <div className="copyright-text">
                                 <p>
-                                    &copy; Copyright 2023 by <a href="index.html">Company.com</a>
+                                    &copy; Copyright 2024 by{" "}
+                                    <a href="https://www.aurobytetechnologies.com/" target="_blank" rel="author">
+                                        AuroByte
+                                    </a>
                                 </p>
                             </div>
 
                             <ul className="social-icon-two">
                                 <li>
                                     {/* open */}
-                                    <a href="https://www.facebook.com/accessenergy.lk?mibextid=ZbWKwL" target="_blank">
+                                    <a
+                                        href="https://www.facebook.com/accessenergy.lk?mibextid=ZbWKwL"
+                                        target="_blank"
+                                        rel="help"
+                                    >
                                         <i className="fab fa-facebook"></i>
                                     </a>
                                 </li>
