@@ -17,19 +17,19 @@ export default function Project({}: Props) {
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <figure className="image">
-                                            <a href="/images/resource/project-1.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-1.jpg" alt="" />
+                                            <a href="/images/resource/projects/Jaffna30kw.jpg" className="lightbox-image">
+                                                <img src="/images/resource/projects/Jaffna30kw.jpg" alt="" />
                                             </a>
                                         </figure>
-                                        <a href="page-project-details.html" className="icon">
+                                        {/* <a href="page-project-details.html" className="icon">
                                             <i className="fa fa-plus"></i>
-                                        </a>
+                                        </a> */}
                                     </div>
                                     <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
+                                        {/* <span className="sub-title">Solar Energy</span>
                                         <h4 className="title">
                                             <a href="page-project-details.html">Maximizing Solar ROI</a>
-                                        </h4>
+                                        </h4> */}
                                     </div>
                                 </div>
                             </div>
@@ -40,19 +40,19 @@ export default function Project({}: Props) {
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <figure className="image">
-                                            <a href="/images/resource/project-2.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-2.jpg" alt="" />
+                                            <a href="/images/resource/projects/chunnakam20kw.jpg" className="lightbox-image">
+                                                <img src="/images/resource/projects/chunnakam20kw.jpg" alt="" />
                                             </a>
                                         </figure>
-                                        <a href="page-project-details.html" className="icon">
+                                        {/* <a href="page-project-details.html" className="icon">
                                             <i className="fa fa-plus"></i>
-                                        </a>
+                                        </a> */}
                                     </div>
                                     <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
+                                        {/* <span className="sub-title">Solar Energy</span>
                                         <h4 className="title">
                                             <a href="page-project-details.html">Diversifying Your Solar</a>
-                                        </h4>
+                                        </h4> */}
                                     </div>
                                 </div>
                             </div>
@@ -63,19 +63,19 @@ export default function Project({}: Props) {
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <figure className="image">
-                                            <a href="/images/resource/project-3.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-3.jpg" alt="" />
+                                            <a href="/images/resource/projects/pointpedro20kw.jpg" className="lightbox-image">
+                                                <img src="/images/resource/projects/pointpedro20kw.jpg" alt="" />
                                             </a>
                                         </figure>
-                                        <a href="page-project-details.html" className="icon">
+                                        {/* <a href="page-project-details.html" className="icon">
                                             <i className="fa fa-plus"></i>
-                                        </a>
+                                        </a> */}
                                     </div>
                                     <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
+                                        {/* <span className="sub-title">Solar Energy</span>
                                         <h4 className="title">
                                             <a href="page-project-details.html">The Benefits of Solar</a>
-                                        </h4>
+                                        </h4> */}
                                     </div>
                                 </div>
                             </div>
@@ -86,19 +86,19 @@ export default function Project({}: Props) {
                                 <div className="inner-box">
                                     <div className="image-box">
                                         <figure className="image">
-                                            <a href="/images/resource/project-4.jpg" className="lightbox-image">
-                                                <img src="/images/resource/project-4.jpg" alt="" />
+                                            <a href="/images/resource/projects/karaveddy20kw.jpg" className="lightbox-image">
+                                                <img src="/images/resource/projects/karaveddy20kw.jpg" alt="" />
                                             </a>
                                         </figure>
-                                        <a href="page-project-details.html" className="icon">
+                                        {/* <a href="page-project-details.html" className="icon">
                                             <i className="fa fa-plus"></i>
-                                        </a>
+                                        </a> */}
                                     </div>
                                     <div className="content-box">
-                                        <span className="sub-title">Solar Energy</span>
+                                        {/* <span className="sub-title">Solar Energy</span>
                                         <h4 className="title">
                                             <a href="page-project-details.html">Shining a Light</a>
-                                        </h4>
+                                        </h4> */}
                                     </div>
                                 </div>
                             </div>

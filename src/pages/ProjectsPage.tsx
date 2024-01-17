@@ -8,10 +8,14 @@ type Project = {
 }
 
 const projects: Array<Project> = [
-    { title: "Maximizing Solar ROI", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-1.jpg" },
-    { title: "Diversifying Your Solar", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-2.jpg" },
-    { title: "The Benefits of Solar", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-3.jpg" },
-    { title: "Shining a Light", subtitle: "SOLAR ENERGY", imageHref: "/images/resource/project-4.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/Jaffna30kw.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/chunnakam20kw.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/pointpedro20kw.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/karaveddy20kw.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/kilinochi5kw.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/sillalai5kw.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/valvettithurai5kw.jpg" },
+    { title: "", subtitle: "", imageHref: "/images/resource/projects/karaveddy.jpg" },
 ];
 
 export default function ProjectsPage({}: Props) {
@@ -50,16 +54,16 @@ export default function ProjectsPage({}: Props) {
                                                         <img src={project.imageHref} alt="" />
                                                     </a>
                                                 </figure>
-                                                <a href="page-project-details.html" className="icon">
+                                                {/* <a href="page-project-details.html" className="icon">
                                                     <i className="fa fa-plus"></i>
-                                                </a>
+                                                </a> */}
                                             </div>
-                                            <div className="content-box">
+                                            {/* <div className="content-box">
                                                 <span className="sub-title">{project.subtitle}</span>
                                                 <h4 className="title">
                                                     <a href="page-project-details.html">{project.title}</a>
                                                 </h4>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
