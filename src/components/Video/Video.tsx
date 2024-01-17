@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef, MouseEvent } from "react"
 
 type Props = {}
 
@@ -6,11 +6,12 @@ export default function Video({}: Props) {
     const [playing, setPlaying] = useState(true)
     const videoRef = useRef<HTMLVideoElement>(null)
 
-    const togglePlay = () => {
+    const togglePlay = (e: MouseEvent<HTMLSpanElement>) => {
         setPlaying(!playing)
         console.log(videoRef.current)
         if (playing) videoRef.current?.pause()
         else videoRef.current?.play()
+        e.stopPropagation()
     }
 
     return (
