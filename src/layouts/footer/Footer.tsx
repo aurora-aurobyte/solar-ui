@@ -78,7 +78,7 @@ export default function Footer(props: Props) {
                     <div className="auto-container">
                         <div className="row">
                             {/* <!--Footer Column--> */}
-                            <div className="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
+                            <div className="footer-column col-xl-4 col-lg-4 col-md-4 col-sm-8">
                                 <div className="footer-widget about-widget">
                                     <div className="logo">
                                         <a href="index.html">
@@ -96,13 +96,13 @@ export default function Footer(props: Props) {
                             </div>
 
                             {/* <!--Footer Column--> */}
-                            <div className="footer-column col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                            <div className="footer-column col-xl-4 col-lg-4 col-md-4 col-sm-8">
                                 <div className="footer-widget">
                                     <h3 className="widget-title">Service</h3>
                                     <ul className="user-links">
                                         {contact.service.map((item, id) => (
                                             <li key={id}>
-                                                <a href={`#${item.url}`}>{item.name}</a>
+                                                <span>{item.name}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -110,7 +110,7 @@ export default function Footer(props: Props) {
                             </div>
 
                             {/* <!--Footer Column--> */}
-                            <div className="footer-column col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                            {/* <div className="footer-column col-xl-4 col-lg-4 col-md-6 col-sm-12">
                                 <div className="footer-widget gallery-widget">
                                     <h3 className="widget-title">Projects</h3>
                                     <div className="widget-content">
@@ -153,10 +153,10 @@ export default function Footer(props: Props) {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* <!--Footer Column--> */}
-                            <div className="footer-column col-xl-3 col-lg-5 col-md-6 col-sm-12">
+                            <div className="footer-column col-xl-4 col-lg-4 col-md-4 col-sm-8">
                                 <div className="footer-widget">
                                     <h3 className="widget-title">Newsletter</h3>
                                     <div className="widget-content">

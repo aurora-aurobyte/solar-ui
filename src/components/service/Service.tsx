@@ -18,22 +18,22 @@ export default function Service({}: Props) {
                                     <i className="icon flaticon-wind-energy-1"></i>
                                     <span className="sub-title">01 Service</span>
                                     <h4 className="title">
-                                        <a href="page-service-details.html">ON GRID SYSTEM</a>
+                                        <span>ON GRID SYSTEM</span>
                                     </h4>
                                     <div className="text">
                                         An on-grid solar power system is one that connects to the electrical grid,
                                         utilizing solar panels to produce electricity. This generated power is then
                                         transferred into the grid and credited to the user's account.
                                     </div>
-                                    <a href="" className="read-more">
+                                    <span className="read-more">
                                         <i className="fa fa-chevron-right"></i>
-                                    </a>
+                                    </span>
                                 </div>
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="page-service-details.html">
+                                        <span>
                                             <img src="/images/resource/service-1.jpg" alt="" />
-                                        </a>
+                                        </span>
                                     </figure>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@ export default function Service({}: Props) {
                                     <i className="icon flaticon-settings-2"></i>
                                     <span className="sub-title">02 Service</span>
                                     <h4 className="title">
-                                        <a href="page-service-details.html">OFF GRID SYSTEM</a>
+                                        <span>OFF GRID SYSTEM</span>
                                     </h4>
                                     <div className="text">
                                         An off-grid system is an independent solar power setup that functions separately
@@ -53,15 +53,15 @@ export default function Service({}: Props) {
                                         inverters, this system generates electricity through solar panels and operates
                                         without reliance on the traditional grid.
                                     </div>
-                                    <a href="" className="read-more">
+                                    <span className="read-more">
                                         <i className="fa fa-chevron-right"></i>
-                                    </a>
+                                    </span>
                                 </div>
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="page-service-details.html">
+                                        <span>
                                             <img src="/images/resource/service-2.jpg" alt="" />
-                                        </a>
+                                        </span>
                                     </figure>
                                 </div>
                             </div>
@@ -73,22 +73,22 @@ export default function Service({}: Props) {
                                     <i className="icon flaticon-windmill"></i>
                                     <span className="sub-title">03 Service</span>
                                     <h4 className="title">
-                                        <a href="page-service-details.html">HYBRID SYSTEM</a>
+                                        <span>HYBRID SYSTEM</span>
                                     </h4>
                                     <div className="text">
                                         A hybrid solar system merges features from both grid-connected and off-grid
                                         systems. By harnessing solar panels to generate electricity, it can store this
                                         power in batteries for future utilization.
                                     </div>
-                                    <a href="" className="read-more">
+                                    <span className="read-more">
                                         <i className="fa fa-chevron-right"></i>
-                                    </a>
+                                    </span>
                                 </div>
                                 <div className="image-box">
                                     <figure className="image">
-                                        <a href="page-service-details.html">
+                                        <span>
                                             <img src="/images/resource/service-3.jpg" alt="" />
-                                        </a>
+                                        </span>
                                     </figure>
                                 </div>
                             </div>
