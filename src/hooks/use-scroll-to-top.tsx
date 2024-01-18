@@ -34,6 +34,13 @@ export function useScrollToTop() {
             // @ts-ignore
             $(".filter-list").mixItUp({})
         }
+
+        //Mobile Nav Hide
+        // @ts-ignore
+        if ($(".mobile-menu").length) {
+            // @ts-ignore
+            $("body").removeClass("mobile-menu-visible")
+        }
     }, [pathname])
 
     return null
