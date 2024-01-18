@@ -214,7 +214,7 @@ export default function Footer(props: Props) {
                         <div className="inner-container">
                             <div className="copyright-text">
                                 <p>
-                                    &copy; Copyright 2024 by{" "}
+                                    &copy; Copyright 2024. Developed by{" "}
                                     <a href="https://www.aurobytetechnologies.com/" target="_blank" rel="author">
                                         AuroByte
                                     </a>

@@ -7,7 +7,7 @@ const posts: Service[] = [
         title: "Installation and commissionin",
         description:
             "System installation begins with installing solar panels on the roof including solar power optimizer and attaching panels. Our electrical experts will then connect the optimizer to the inverter and to your circuit breaker box which generates electricity to your home or business.",
-        image: "/images/resource/service-5.jpg",
+        image: "/images/resource/service-6.jpg",
         icon: "flaticon-solar-panel",
     },
     {
@@ -15,7 +15,7 @@ const posts: Service[] = [
         title: "System Solutions and approval",
         description:
             "Once choosing the most suitable solar system we will provide a comprehensive solar system drawing along with a projected energy report at no cost. We also ensure to guide you through all the paperwork necessary to be approved for CEB or LECO requirement standards.",
-        image: "/images/resource/service-1.jpg",
+        image: "/images/resource/service-5.jpg",
         icon: "flaticon-solar-panel",
     },
     {
