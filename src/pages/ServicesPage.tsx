@@ -1,5 +1,6 @@
 import PageTitle from "components/common/PageTitle"
 import ServiceItem, { Service } from "components/service/ServiceItem"
+import { Helmet } from "react-helmet-async"
 
 const posts: Service[] = [
     {
@@ -33,6 +34,9 @@ type Props = {}
 export default function ServicesPage({}: Props) {
     return (
         <>
+            <Helmet>
+                <title> Services | Access Energy Engineering </title>
+            </Helmet>
             <PageTitle title="Services" links={[{ title: "Home", href: "/" }]} />
 
             {/* <!-- Services Section Two --> */}

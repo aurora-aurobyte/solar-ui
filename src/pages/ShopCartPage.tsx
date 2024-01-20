@@ -1,5 +1,6 @@
 import PageTitle from "components/common/PageTitle"
 import { ChangeEvent } from "react"
+import { Helmet } from "react-helmet-async"
 import { RouterLink } from "routes/components"
 import { CartItem, modifyQuantity, removeCartItem } from "store/features/cartSlice"
 import { useAppDispatch, useAppSelector } from "store/store"
@@ -20,6 +21,9 @@ export default function ShopCartPage({}: Props) {
 
     return (
         <>
+            <Helmet>
+                <title> Cart | Access Energy Engineering </title>
+            </Helmet>
             <PageTitle title="Cart" />
 
             {/* <!--cart Start--> */}
@@ -141,17 +145,17 @@ export default function ShopCartPage({}: Props) {
                                         <form className="form" action="#">
                                             <div className="mb-10">
                                                 <select className="form-control">
-                                                    <option>Select Country</option>
-                                                    <option>Australia</option>
-                                                    <option>UK</option>
-                                                    <option>USA</option>
+                                                    <option>Select Area</option>
+                                                    <option>Jaffna</option>
+                                                    <option>Chunnakam</option>
+                                                    <option>Thellipalai</option>
                                                 </select>
                                             </div>
                                             <div className="mb-10">
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    placeholder="State/country"
+                                                    placeholder="Area"
                                                     defaultValue=""
                                                 />
                                             </div>
@@ -159,7 +163,7 @@ export default function ShopCartPage({}: Props) {
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    placeholder="Postcod/zip"
+                                                    placeholder="lane"
                                                     defaultValue=""
                                                 />
                                             </div>
@@ -177,15 +181,15 @@ export default function ShopCartPage({}: Props) {
                                             <tbody>
                                                 <tr>
                                                     <td>Cart Subtotal</td>
-                                                    <td>$180.00</td>
+                                                    <td>N/A</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Shipping and Handling</td>
-                                                    <td>$70.00</td>
+                                                    <td>N/A</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Order Total</td>
-                                                    <td>$250.00</td>
+                                                    <td>N/A</td>
                                                 </tr>
                                             </tbody>
                                         </table>

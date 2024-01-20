@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async"
 import { RouterLink } from "routes/components"
 
 type Props = {}
@@ -5,6 +6,9 @@ type Props = {}
 export default function AboutPage({}: Props) {
     return (
         <>
+            <Helmet>
+                <title> About | Access Energy Engineering </title>
+            </Helmet>
             {/* <!-- Start main-content --> */}
             <section className="page-title" style={{ backgroundImage: "url(images/background/page-title-bg.png)" }}>
                 <div className="auto-container">

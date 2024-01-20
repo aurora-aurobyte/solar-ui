@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react"
+import { Helmet } from "react-helmet-async"
 
 type Props = {}
 
@@ -45,6 +46,9 @@ export default function ContactPage({}: Props) {
 
     return (
         <>
+            <Helmet>
+                <title> Contact | Access Energy Engineering </title>
+            </Helmet>
             {/* <!-- Start main-content --> */}
             <section className="page-title" style={{ backgroundImage: "url(images/background/page-title-bg.png)" }}>
                 <div className="auto-container">

@@ -2,6 +2,7 @@ import PageTitle from "components/common/PageTitle"
 import { RouterLink } from "routes/components"
 import ProductItem, { Product } from "components/product/ProductItem"
 import { useEffect, useState } from "react"
+import { Helmet } from "react-helmet-async"
 
 type Category = {
     id: string
@@ -124,6 +125,9 @@ export default function ShopProductsPage({}: Props) {
 
     return (
         <>
+            <Helmet>
+                <title> Products | Access Energy Engineering </title>
+            </Helmet>
             <PageTitle title="Products" />
 
             {/* 

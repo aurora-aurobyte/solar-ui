@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async"
+
 type Props = {}
 
 export default function Page404({}: Props) {
     return (
         <>
+            <Helmet>
+                <title> 404 | Access Energy Engineering </title>
+            </Helmet>
             {/* <!-- 404 Section --> */}
             <section className="">
                 <div className="auto-container pt-120 pb-70">

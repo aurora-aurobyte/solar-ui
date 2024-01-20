@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async"
+
 type Props = {}
 
 export default function ShopCheckOutPage({}: Props) {
     return (
         <>
+            <Helmet>
+                <title> Checkout | Access Energy Engineering </title>
+            </Helmet>
             {/* <!-- Start main-content --> */}
             <section className="page-title" style={{ backgroundImage: "url(images/background/page-title-bg.png)" }}>
                 <div className="auto-container">

@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async"
+
 type Props = {}
 
 type Project = {
@@ -20,6 +22,9 @@ const projects: Array<Project> = [
 export default function ProjectsPage({}: Props) {
     return (
         <>
+            <Helmet>
+                <title> Projects | Access Energy Engineering </title>
+            </Helmet>
             {/* <!-- Start main-content --> */}
             <section className="page-title" style={{ backgroundImage: "url(images/background/page-title-bg.png)" }}>
                 <div className="auto-container">
@@ -49,7 +54,11 @@ export default function ProjectsPage({}: Props) {
                                         <div className="inner-box">
                                             <div className="image-box">
                                                 <figure className="image">
-                                                    <a href={project.imageHref} className="lightbox-image">
+                                                    <a
+                                                        href={project.imageHref}
+                                                        className="lightbox-image"
+                                                        target="_blank"
+                                                    >
                                                         <img src={project.imageHref} alt="" />
                                                     </a>
                                                 </figure>
